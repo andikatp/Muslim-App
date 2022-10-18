@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/gis.dart';
 
-class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
-  const AppBarWidget({super.key});
+class AppBarJadwalWidget extends StatelessWidget with PreferredSizeWidget {
+  const AppBarJadwalWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
                         width: 8,
                       ),
                       Text(
-                        'Kota Jakarta',
+                        'Kota Banda Aceh',
                         style: GoogleFonts.poppins(
                             fontSize: 18.0, fontWeight: FontWeight.w500),
                       ),
@@ -61,6 +62,5 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(97);
 }

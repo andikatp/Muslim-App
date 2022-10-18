@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class JadwalSolatModel {
   final String icon;
   final String prayerSchedule;

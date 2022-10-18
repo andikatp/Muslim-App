@@ -14,6 +14,7 @@ class DateV2Widget extends StatelessWidget {
   final DateTime date;
   final TextStyle? monthTextStyle, dayTextStyle, dateTextStyle;
   final Color selectionColor;
+  final Color selectionColorSelected;
   final DateSelectionCallback? onDateSelected;
   final String? locale;
 
@@ -22,6 +23,7 @@ class DateV2Widget extends StatelessWidget {
     required this.monthTextStyle,
     required this.dayTextStyle,
     required this.dateTextStyle,
+    required this.selectionColorSelected,
     required this.selectionColor,
     this.width,
     this.onDateSelected,
@@ -30,22 +32,28 @@ class DateV2Widget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       child: Container(
+        margin: const EdgeInsets.only(right: 25),
         width: width,
-        margin: const EdgeInsets.all(3.0),
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          border: Border.all(color: selectionColorSelected),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(30.0),
+          ),
           color: selectionColor,
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.fromLTRB(7, 8, 7, 8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                  DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
+                  DateFormat("EEE", locale)
+                      .format(date)
+                      .toUpperCase()
+                      .substring(0, 2), // WeekDay
                   style: dayTextStyle),
               Text(date.day.toString(), // Date
                   style: dateTextStyle),

@@ -5,19 +5,19 @@ import 'package:jadwal_solat/services/prayer_service.dart';
 class PrayerCubit extends Cubit<PrayerState> {
   PrayerCubit()
       : super(
-          PrayerState(JadwalShalat: Jadwal()),
+          PrayerState(jadwalShalat: Jadwal()),
         );
 
-  void getTime() async {
-    var service = await PrayerService().getPrayerTime();
+  void getTime({int tahun = 2022, int bulan = 01, int tanggal = 01}) async {
+    var service = await PrayerService()
+        .getPrayerTime(tahun: tahun, bulan: bulan, tanggal: tanggal);
     emit(
-      PrayerState(JadwalShalat: service.jadwal ?? Jadwal()),
+      PrayerState(jadwalShalat: service.jadwal ?? Jadwal()),
     );
   }
 }
 
 class PrayerState {
-  final Jadwal JadwalShalat;
-
-  PrayerState({required this.JadwalShalat});
+  final Jadwal jadwalShalat;
+  PrayerState({required this.jadwalShalat});
 }

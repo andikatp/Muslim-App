@@ -6,11 +6,11 @@ class PrayerData {
 
   PrayerData.fromJson(Map<String, dynamic> json) {
     status = json['status'];
-    value = json['data'] != null ? new Value.fromMap(json['data']) : null;
+    value = json['data'] != null ? Value.fromMap(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['status'] = this.status;
     if (this.value != null) {
       data['data'] = this.value!.toJson();

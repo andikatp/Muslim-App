@@ -1,4 +1,3 @@
-import 'package:date_picker_timeline/date_widget.dart';
 import 'package:date_picker_timeline/extra/color.dart';
 import 'package:date_picker_timeline/extra/style.dart';
 import 'package:date_picker_timeline/gestures/tap.dart';
@@ -110,12 +109,12 @@ class _DateV2PickerState extends State<DateV2Picker> {
       widget.controller!.setDatePickerState(this);
     }
 
-    this.selectedDateStyle =
-        widget.dateTextStyle.copyWith(color: widget.selectedTextColor);
+    this.selectedDateStyle = widget.dateTextStyle
+        .copyWith(color: widget.selectedTextColor, fontWeight: FontWeight.w700);
     this.selectedMonthStyle =
         widget.monthTextStyle.copyWith(color: widget.selectedTextColor);
-    this.selectedDayStyle =
-        widget.dayTextStyle.copyWith(color: widget.selectedTextColor);
+    this.selectedDayStyle = widget.dayTextStyle
+        .copyWith(color: widget.selectedTextColor, fontWeight: FontWeight.w700);
 
     this.deactivatedDateStyle =
         widget.dateTextStyle.copyWith(color: widget.deactivatedColor);
@@ -192,6 +191,9 @@ class _DateV2PickerState extends State<DateV2Picker> {
                     : widget.dayTextStyle,
             width: widget.width,
             locale: widget.locale,
+            selectionColorSelected: isSelected
+                ? widget.selectionColor.withOpacity(1)
+                : Colors.transparent,
             selectionColor:
                 isSelected ? widget.selectionColor : Colors.transparent,
             onDateSelected: (selectedDate) {
@@ -264,7 +266,7 @@ class DatePickerController {
   /// Calculate the number of pixels that needs to be scrolled to go to the
   /// date provided in the argument
   double _calculateDateOffset(DateTime date) {
-    final startDate = new DateTime(
+    final startDate = DateTime(
         _datePickerState!.widget.startDate.year,
         _datePickerState!.widget.startDate.month,
         _datePickerState!.widget.startDate.day);
