@@ -17,8 +17,8 @@ class QuranService {
     }
   }
 
-  Future<BacaQuran> isiQuran() async {
-    var url = Uri.parse('https://equran.id/api/surat/2');
+  Future<BacaQuran> isiQuran({int halaman = 1}) async {
+    var url = Uri.parse('https://equran.id/api/surat/$halaman');
     http.Response response = await http.get(url);
     var body = jsonDecode(response.body);
     if (response.statusCode == 200) {

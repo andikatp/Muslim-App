@@ -35,68 +35,69 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.miniCenterDocked,
-        floatingActionButton: FloatingActionButtonWidget(),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedFontSize: 0,
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/Vector.svg'),
-              label: '',
-              activeIcon: SvgPicture.asset('assets/VectorHome.svg'),
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButton: FloatingActionButtonWidget(),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedFontSize: 0,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/Vector.svg'),
+            label: '',
+            activeIcon: SvgPicture.asset('assets/VectorHome.svg'),
+          ),
+          BottomNavigationBarItem(
+            icon: Iconify(
+              Eva.compass_outline,
+              color: Colors.black.withOpacity(0.5),
             ),
-            BottomNavigationBarItem(
-              icon: Iconify(
-                Eva.compass_outline,
-                color: Colors.black.withOpacity(0.5),
-              ),
-              label: '',
-              activeIcon: Iconify(
-                Eva.compass_fill,
-                color: Color(0xFF2FD9E3),
-              ),
+            label: '',
+            activeIcon: Iconify(
+              Eva.compass_fill,
+              color: Color(0xFF2FD9E3),
             ),
-            BottomNavigationBarItem(
-              backgroundColor: Theme.of(context).backgroundColor,
-              icon: const SizedBox.shrink(),
-              label: "",
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).backgroundColor,
+            icon: const SizedBox.shrink(),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/book-outline.svg',
+              height: 24,
+              width: 24,
+              color: Colors.black.withOpacity(0.5),
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/book-outline.svg',
-                height: 24,
-                width: 24,
-                color: Colors.black.withOpacity(0.5),
-              ),
-              label: '',
-              activeIcon: Iconify(
-                Ion.book_outline,
-                color: Color(0xFF2FD9E3),
-              ),
+            label: '',
+            activeIcon: Iconify(
+              Ion.book_outline,
+              color: Color(0xFF2FD9E3),
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/person.svg',
-                width: 24,
-                height: 24,
-                color: Colors.black.withOpacity(0.5),
-              ),
-              label: '',
-              activeIcon: SvgPicture.asset(
-                'assets/person.svg',
-                width: 24,
-                height: 24,
-                color: Color(0xFF2FD9E3),
-              ),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/person.svg',
+              width: 24,
+              height: 24,
+              color: Colors.black.withOpacity(0.5),
             ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-        ),
-        body: _page[_selectedIndex]);
+            label: '',
+            activeIcon: SvgPicture.asset(
+              'assets/person.svg',
+              width: 24,
+              height: 24,
+              color: Color(0xFF2FD9E3),
+            ),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
+      body: _page[_selectedIndex],
+    );
   }
 }

@@ -48,8 +48,8 @@ class BacaQuran {
         audio: json["audio"],
         status: json["status"],
         ayat: List<Ayat>.from(json["ayat"].map((x) => Ayat.fromJson(x))),
-        suratSelanjutnya: SuratSenya.fromJson(json["surat_selanjutnya"]),
-        suratSebelumnya: SuratSenya.fromJson(json["surat_sebelumnya"]),
+        suratSelanjutnya: null,
+        suratSebelumnya: null,
       );
 
   Map<String, dynamic> toJson() => {
@@ -63,8 +63,8 @@ class BacaQuran {
         "audio": audio,
         "status": status,
         "ayat": List<dynamic>.from(ayat!.map((x) => x.toJson())),
-        "surat_selanjutnya": suratSelanjutnya?.toJson(),
-        "surat_sebelumnya": suratSebelumnya?.toJson(),
+        "surat_selanjutnya": null,
+        "surat_sebelumnya": null,
       };
 }
 

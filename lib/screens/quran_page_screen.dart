@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jadwal_solat/bloc/isi_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
+import 'package:jadwal_solat/screens/home_page_screen.dart';
+import 'package:jadwal_solat/screens/main_screen.dart';
 import 'package:jadwal_solat/screens/quran_read_screen.dart';
 
 class QuranPageScreen extends StatefulWidget {
@@ -22,7 +24,6 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
     context.read<NamaQuranCubit>().getData();
   }
 
-  int tappedSurah = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,7 +192,12 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 30, vertical: 10),
                       child: ListTile(
-                        onTap: () {},
+                        onTap: () {
+                          print(index + 1);
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => QuranReadScreen(halaman: index+1,)));
+                          
+                        },
                         leading: CircleAvatar(
                           radius: 22,
                           backgroundColor: Colors.black.withOpacity(0.75),

@@ -27,17 +27,18 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
   @override
   void initState() {
     super.initState();
+    selectedDate = context.read<PrayerCubit>().selectedDate ?? DateTime.now();
     context.read<PrayerCubit>().getTime(
         bulan: selectedDate.month,
         tahun: selectedDate.year,
-        tanggal: selectedDate.day);
+        tanggal: selectedDate.day,
+        date: selectedDate);
     context.read<NamaQuranCubit>().getData();
   }
 
   bool _isActive = false;
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBarJadwalWidget(),
       body: ListView(
@@ -130,7 +131,8 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                       context.read<PrayerCubit>().getTime(
                           bulan: date.month,
                           tahun: date.year,
-                          tanggal: date.day);
+                          tanggal: date.day,
+                          date: date);
                       _isActive = false;
                     },
                   ),

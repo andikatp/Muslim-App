@@ -23,38 +23,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<PrayerCubit>(
+            create: (BuildContext context) => PrayerCubit(),
+          ),
+          BlocProvider<NamaQuranCubit>(
+            create: (BuildContext context) => NamaQuranCubit(),
+          ),
+          BlocProvider<IsiQuranCubit>(
+            create: (BuildContext context) => IsiQuranCubit(),
+          ),
         ],
-        supportedLocales: const [
-          Locale('id')
-        ],
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            backgroundColor: Colors.white,
-            titleTextStyle: GoogleFonts.poppins(
-              color: Colors.black.withOpacity(0.7),
-              fontSize: 12,
+        child: MaterialApp(
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: const [Locale('id')],
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.white,
+              titleTextStyle: GoogleFonts.poppins(
+                color: Colors.black.withOpacity(0.7),
+                fontSize: 12,
+              ),
             ),
           ),
-        ),
-        debugShowCheckedModeBanner: false,
-        home: MultiBlocProvider(
-          providers: [
-            BlocProvider<PrayerCubit>(
-              create: (BuildContext context) => PrayerCubit(),
-            ),
-            BlocProvider<NamaQuranCubit>(
-              create: (BuildContext context) => NamaQuranCubit(),
-            ),
-            BlocProvider<IsiQuranCubit>(
-              create: (BuildContext context) => IsiQuranCubit(),
-            ),
-          ],
-          child: MainScreen(),
+          debugShowCheckedModeBanner: false,
+          home: MainScreen(),
         ));
   }
 }

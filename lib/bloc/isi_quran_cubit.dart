@@ -3,15 +3,18 @@ import 'package:jadwal_solat/models/isi_quran_models.dart';
 import 'package:jadwal_solat/services/quran_service.dart';
 
 class IsiQuranCubit extends Cubit<IsiQuranState> {
-  IsiQuranCubit() : super(IsiQuranState(bacaQuran: BacaQuran()));
+  IsiQuranCubit() : super(IsiQuranState(bacaQuran: BacaQuran(), halaman: 1));
 
-  void getIsi() async {
-    var service = await QuranService().isiQuran();
-    emit(IsiQuranState(bacaQuran: service));
+  int coba = 1;
+
+  void getIsi(int halaman) async {
+    var service = await QuranService().isiQuran(halaman: halaman);
+    emit(IsiQuranState(bacaQuran: service, halaman: state.halaman));
   }
 }
 
 class IsiQuranState {
   final BacaQuran bacaQuran;
-  IsiQuranState({required this.bacaQuran});
+  final int halaman;
+  IsiQuranState({required this.bacaQuran, required this.halaman});
 }
