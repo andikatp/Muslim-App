@@ -16,3 +16,4 @@ A simple flutter app with Prayer Schedule and Readable Quran using [API](https:/
 - flutter_svg: ^1.1.5 
 
 # DEMO
+![Demo](https://github.com/andikatp/GifTest/blob/main/prayer_app.gif)
