@@ -30,11 +30,12 @@ class Sizes {
   static const p280 = 280.0;
   static const p300 = 300.0;
   static const p332 = 332.0;
-  static const p400 = 400.0; 
+  static const p400 = 400.0;
 }
 
 class Gap {
   // width
+  static final w4 = SizedBox(width: Sizes.p4.w);
   static final w8 = SizedBox(width: Sizes.p8.w);
   static final w12 = SizedBox(width: Sizes.p12.w);
   static final w16 = SizedBox(width: Sizes.p16.w);
@@ -42,6 +43,7 @@ class Gap {
   static final w24 = SizedBox(width: Sizes.p24.w);
 
   // height
+  static final h4 = SizedBox(height: Sizes.p4.h);
   static final h8 = SizedBox(height: Sizes.p8.h);
   static final h12 = SizedBox(height: Sizes.p12.h);
   static final h16 = SizedBox(height: Sizes.p16.h);

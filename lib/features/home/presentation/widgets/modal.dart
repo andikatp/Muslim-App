@@ -73,7 +73,7 @@ class _ModalState extends State<Modal> {
               ),
             ),
           ),
-          Gap.w20,
+          Gap.h20,
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 300),
             switchInCurve: Curves.easeIn,

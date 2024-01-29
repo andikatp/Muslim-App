@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jadwal_solat/core/extensions/context_extension.dart';
 import 'package:jadwal_solat/features/home/presentation/widgets/header.dart';
 import 'package:jadwal_solat/features/home/presentation/widgets/modal.dart';
 
@@ -22,7 +21,7 @@ class MainPage extends StatelessWidget {
             child: SafeArea(
               child: Column(
                 children: [
-                  Center(child: Header()),
+                  Header(),
                   Modal(),
                 ],
               ),

@@ -41,6 +41,10 @@ class Header extends StatelessWidget {
         'labelContainer': 'Replay',
       },
     ];
+
+    const selamatDatang = 'Selamat Datang';
+    const userName = 'user';
+
     return Container(
       height: context.media.height * 0.45,
       padding: REdgeInsets.all(20),
@@ -57,12 +61,12 @@ class Header extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Selamat Datang',
+                      selamatDatang,
                       style: context.textTheme.bodyMedium!
                           .copyWith(color: Colors.white),
                     ),
                     Text(
-                      'User',
+                      userName,
                       style: context.textTheme.headlineSmall!
                           .copyWith(color: Colors.white),
                     ),
@@ -75,12 +79,12 @@ class Header extends StatelessWidget {
                       color: Colors.white,
                     ),
                     Gap.w12,
-                    const CircleAvatar(
-                      radius: 35,
+                    CircleAvatar(
+                      radius: 35.r,
                       backgroundColor: Colors.white,
                       child: CircleAvatar(
-                        radius: 32,
-                        backgroundImage: AssetImage('assets/Ellipse.png'),
+                        radius: 32.r,
+                        backgroundImage: const AssetImage('assets/Ellipse.png'),
                       ),
                     ),
                   ],
@@ -92,7 +96,7 @@ class Header extends StatelessWidget {
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.never,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(30).r,
                 borderSide: BorderSide.none,
               ),
               fillColor: Colors.white,
@@ -101,16 +105,16 @@ class Header extends StatelessWidget {
                 Icons.search,
                 color: Colors.black.withOpacity(0.5),
               ),
-              contentPadding: const EdgeInsets.all(19),
+              contentPadding:  REdgeInsets.all(19),
               labelText: 'Cari Kajian Menarik...',
               labelStyle: context.textTheme.bodyMedium,
               suffixIcon: Container(
-                margin: const EdgeInsets.only(right: 7),
+                margin:  REdgeInsets.only(right: 7),
                 height: 48,
                 width: 48,
-                padding: const EdgeInsets.all(15),
+                padding:  REdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(30).r,
                   color: const Color(0xFF2FD9E3),
                 ),
                 child: const Iconify(
@@ -165,19 +169,19 @@ class AvatarUstadWidget extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: borderColor,
-              radius: 32,
+              radius: 32.r,
               child: CircleAvatar(
                 backgroundImage: AssetImage(image),
-                radius: 30,
+                radius: 30.r,
               ),
             ),
             Positioned(
               bottom: -3,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                padding:  REdgeInsets.symmetric(horizontal: 4, vertical: 1),
                 decoration: BoxDecoration(
                   color: containerColor,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20).r,
                 ),
                 child: Center(
                   child: Text(
@@ -193,14 +197,10 @@ class AvatarUstadWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 4),
+        Gap.h4,
         Text(
           label,
-          style: GoogleFonts.poppins(
-            fontSize: 9,
-            color: Colors.white,
-            fontWeight: FontWeight.w500,
-          ),
+          style: context.textTheme.bodySmall!.copyWith(color: Colors.white),
         ),
       ],
     );
