@@ -1,9 +1,12 @@
+import 'package:jadwal_solat/core/utils/typedef.dart';
+
 class PrayerData {
   PrayerData({this.status, this.value});
 
   PrayerData.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    value = json['data'] != null ? Value.fromMap(json['data']) : null;
+    status = json['status'] as bool;
+    value =
+        json['data'] != null ? Value.fromMap(json['data'] as ResultMap) : null;
   }
   bool? status;
   Value? value;
@@ -22,12 +25,15 @@ class Value {
   Value({this.id, this.lokasi, this.daerah, this.koordinat, this.jadwal});
 
   Value.fromMap(Map<String, dynamic> json) {
-    id = json['id'];
-    lokasi = json['lokasi'];
-    daerah = json['daerah'];
-    koordinat =
-        json['koordinat'] != null ? Koordinat.fromMap(json['koordinat']) : null;
-    jadwal = json['jadwal'] != null ? Jadwal.fromJson(json['jadwal']) : null;
+    id = json['id'] as String?;
+    lokasi = json['lokasi'] as String?;
+    daerah = json['daerah'] as String?;
+    koordinat = json['koordinat'] != null
+        ? Koordinat.fromMap(json['koordinat'] as ResultMap)
+        : null;
+    jadwal = json['jadwal'] != null
+        ? Jadwal.fromJson(json['jadwal'] as ResultMap)
+        : null;
   }
   String? id;
   String? lokasi;
@@ -54,10 +60,10 @@ class Koordinat {
   Koordinat({this.lat, this.lon, this.lintang, this.bujur});
 
   Koordinat.fromMap(Map<String, dynamic> json) {
-    lat = json['lat'];
-    lon = json['lon'];
-    lintang = json['lintang'];
-    bujur = json['bujur'];
+    lat = json['lat'] as double?;
+    lon = json['lon'] as double?;
+    lintang = json['lintang'] as String?;
+    bujur = json['bujur'] as String?;
   }
   double? lat;
   double? lon;
@@ -89,16 +95,16 @@ class Jadwal {
   });
 
   Jadwal.fromJson(Map<String, dynamic> json) {
-    tanggal = json['tanggal'];
-    imsak = json['imsak'];
-    subuh = json['subuh'];
-    terbit = json['terbit'];
-    dhuha = json['dhuha'];
-    dzuhur = json['dzuhur'];
-    ashar = json['ashar'];
-    maghrib = json['maghrib'];
-    isya = json['isya'];
-    date = json['date'];
+    tanggal = json['tanggal'] as String?;
+    imsak = json['imsak'] as String?;
+    subuh = json['subuh'] as String?;
+    terbit = json['terbit'] as String?;
+    dhuha = json['dhuha'] as String?;
+    dzuhur = json['dzuhur'] as String?;
+    ashar = json['ashar'] as String?;
+    maghrib = json['maghrib'] as String?;
+    isya = json['isya'] as String?;
+    date = json['date'] as String?;
   }
   String? tanggal;
   String? imsak;

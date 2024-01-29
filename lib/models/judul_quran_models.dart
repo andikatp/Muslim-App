@@ -1,7 +1,10 @@
 import 'dart:convert';
 
-List<NamaQuran> namaQuranFromJson(String str) =>
-    List<NamaQuran>.from(json.decode(str).map(NamaQuran.fromJson));
+import 'package:jadwal_solat/core/utils/typedef.dart';
+
+List<NamaQuran> namaQuranFromJson(String str) => List<NamaQuran>.from(
+      (json.decode(str) as List<ResultMap>).map(NamaQuran.fromJson),
+    );
 
 String namaQuranToJson(List<NamaQuran> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -19,15 +22,15 @@ class NamaQuran {
   });
 
   factory NamaQuran.fromJson(Map<String, dynamic> json) => NamaQuran(
-        nomor: json['nomor'],
-        nama: json['nama'],
-        namaLatin: json['nama_latin'],
-        jumlahAyat: json['jumlah_ayat'],
+        nomor: json['nomor'] as int,
+        nama: json['nama'] as String,
+        namaLatin: json['nama_latin'] as String,
+        jumlahAyat: json['jumlah_ayat'] as int,
         tempatTurun:
             tempatTurunValues.map[json['tempat_turun']] ?? TempatTurun.MADINAH,
-        arti: json['arti'],
-        deskripsi: json['deskripsi'],
-        audio: json['audio'],
+        arti: json['arti'] as String,
+        deskripsi: json['deskripsi'] as String,
+        audio: json['audio'] as String,
       );
 
   int nomor;

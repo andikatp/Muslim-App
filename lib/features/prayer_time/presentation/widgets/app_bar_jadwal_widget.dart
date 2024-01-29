@@ -1,49 +1,44 @@
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/gis.dart';
+import 'package:jadwal_solat/core/constants/app_sizes.dart';
+import 'package:jadwal_solat/core/extensions/context_extension.dart';
 
-class AppBarJadwalWidget extends StatelessWidget implements  PreferredSizeWidget {
+class AppBarJadwalWidget extends StatelessWidget
+    implements PreferredSizeWidget {
   const AppBarJadwalWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const title = 'Lokasi Anda Sekarang';
+    const cityName = 'Kota Banda Aceh';
     return AppBar(
       flexibleSpace: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          padding: REdgeInsets.symmetric(horizontal: 20, vertical: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Lokasi Anda Sekarang",
-                    style: GoogleFonts.poppins(
-                      color: Colors.black.withOpacity(0.7),
-                      fontSize: 12,
-                    ),
+                    title,
+                    style: context.textTheme.bodyMedium,
                   ),
-                  const SizedBox(
-                    height: 11.0,
-                  ),
+                  Gap.h12,
                   Row(
                     children: [
                       InkWell(
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(28).r,
                         onTap: () {},
                         child: const Icon(Icons.my_location),
                       ),
-                      const SizedBox(
-                        width: 8,
-                      ),
+                      Gap.w8,
                       Text(
-                        'Kota Banda Aceh',
-                        style: GoogleFonts.poppins(
-                            fontSize: 18.0, fontWeight: FontWeight.w500),
+                        cityName,
+                        style: context.textTheme.bodyLarge,
                       ),
                     ],
                   ),
@@ -51,7 +46,7 @@ class AppBarJadwalWidget extends StatelessWidget implements  PreferredSizeWidget
               ),
               Iconify(
                 Gis.compass_rose_n,
-                size: 60,
+                size: 60.sp,
                 color: Colors.black.withOpacity(0.75),
               ),
             ],
