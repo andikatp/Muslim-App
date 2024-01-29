@@ -18,7 +18,6 @@ class PrayerTimeRepoImpl implements PrayerTimeRepo {
 
   @override
   ResultFuture<PrayerTimeEntity> getPrayerTime(
-    String cityName,
     int year,
     int month,
     int date,
@@ -26,7 +25,7 @@ class PrayerTimeRepoImpl implements PrayerTimeRepo {
     if (!await _networkInfo.isConnected) {
       return const Left(InternetFailure());
     }
-    final result = await _dataSource.getPrayerTime(cityName, year, month, date);
+    final result = await _dataSource.getPrayerTime(year, month, date);
     return Right(result);
   }
 }
