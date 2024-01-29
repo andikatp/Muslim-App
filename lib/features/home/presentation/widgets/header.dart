@@ -5,6 +5,7 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/carbon.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
+import 'package:jadwal_solat/screens/home_page_screen.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -105,14 +106,14 @@ class Header extends StatelessWidget {
                 Icons.search,
                 color: Colors.black.withOpacity(0.5),
               ),
-              contentPadding:  REdgeInsets.all(19),
+              contentPadding: REdgeInsets.all(19),
               labelText: 'Cari Kajian Menarik...',
               labelStyle: context.textTheme.bodyMedium,
               suffixIcon: Container(
-                margin:  REdgeInsets.only(right: 7),
+                margin: REdgeInsets.only(right: 7),
                 height: 48,
                 width: 48,
-                padding:  REdgeInsets.all(15),
+                padding: REdgeInsets.all(15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30).r,
                   color: const Color(0xFF2FD9E3),
@@ -140,69 +141,6 @@ class Header extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class AvatarUstadWidget extends StatelessWidget {
-  const AvatarUstadWidget({
-    required this.image,
-    required this.borderColor,
-    required this.label,
-    required this.containerColor,
-    required this.labelContainer,
-    super.key,
-  });
-  final String image;
-  final Color borderColor;
-  final String label;
-  final Color containerColor;
-  final String labelContainer;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Stack(
-          alignment: Alignment.center,
-          clipBehavior: Clip.none,
-          children: [
-            CircleAvatar(
-              backgroundColor: borderColor,
-              radius: 32.r,
-              child: CircleAvatar(
-                backgroundImage: AssetImage(image),
-                radius: 30.r,
-              ),
-            ),
-            Positioned(
-              bottom: -3,
-              child: Container(
-                padding:  REdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                decoration: BoxDecoration(
-                  color: containerColor,
-                  borderRadius: BorderRadius.circular(20).r,
-                ),
-                child: Center(
-                  child: Text(
-                    labelContainer,
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontSize: 7,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        Gap.h4,
-        Text(
-          label,
-          style: context.textTheme.bodySmall!.copyWith(color: Colors.white),
-        ),
-      ],
     );
   }
 }

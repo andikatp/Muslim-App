@@ -10,7 +10,7 @@ import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/prayer_cubit.dart';
 import 'package:jadwal_solat/models/jadwal_solat_model.dart';
 import 'package:jadwal_solat/widget/date_picker_v2_widget.dart';
-import 'package:jadwal_solat/widget/app_bar_jadwal_widget.dart';
+import 'package:jadwal_solat/features/prayer_time/presentation/widgets/app_bar_jadwal_widget.dart';
 
 class JadwalSolatScreen extends StatefulWidget {
   const JadwalSolatScreen({super.key});
@@ -32,7 +32,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
         bulan: selectedDate.month,
         tahun: selectedDate.year,
         tanggal: selectedDate.day,
-        date: selectedDate);
+        date: selectedDate,);
     context.read<NamaQuranCubit>().getData();
   }
 
@@ -40,13 +40,12 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarJadwalWidget(),
+      appBar: const AppBarJadwalWidget(),
       body: ListView(
         children: [
           SizedBox(
             height: 182,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(height: 24),
                 Padding(
@@ -61,20 +60,20 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                                 selectedDate.year,
                                 selectedDate.month - 1,
                                 selectedDate.day,
-                                selectedDate.hour);
+                                selectedDate.hour,);
                           });
                         },
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Colors.black.withOpacity(0.25)),
+                                color: Colors.black.withOpacity(0.25),),
                             borderRadius: BorderRadius.circular(24),
                           ),
                           child: const Icon(Icons.chevron_left),
                         ),
                       ),
                       Text(
-                        DateFormat.MMMM().format(selectedDate).toString(),
+                        DateFormat.MMMM().format(selectedDate),
                         style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
@@ -87,13 +86,13 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                                 selectedDate.year,
                                 selectedDate.month + 1,
                                 selectedDate.day,
-                                selectedDate.hour);
+                                selectedDate.hour,);
                           });
                         },
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Colors.black.withOpacity(0.25)),
+                                color: Colors.black.withOpacity(0.25),),
                             borderRadius: BorderRadius.circular(24),
                           ),
                           child: const Icon(Icons.chevron_right),
@@ -107,23 +106,23 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: DateV2Picker(
                     () {
-                      var dateNow =
-                          DateTime(selectedDate.year, selectedDate.month, 1);
+                      final dateNow =
+                          DateTime(selectedDate.year, selectedDate.month);
                       return dateNow;
                     }(),
-                    height: 67.0,
-                    width: 32.0,
-                    locale: "id_ID",
+                    height: 67,
+                    width: 32,
+                    locale: 'id_ID',
                     daysCount: () {
-                      var dateEnd = DateTime(
-                          selectedDate.year, selectedDate.month + 1, 0);
+                      final dateEnd = DateTime(
+                          selectedDate.year, selectedDate.month + 1, 0,);
                       return dateEnd.day;
                     }(),
                     initialSelectedDate: selectedDate,
                     dayTextStyle: GoogleFonts.poppins(
-                        fontSize: 12, fontWeight: FontWeight.w400),
+                        fontSize: 12, fontWeight: FontWeight.w400,),
                     dateTextStyle: GoogleFonts.poppins(
-                        fontSize: 12, fontWeight: FontWeight.w400),
+                        fontSize: 12, fontWeight: FontWeight.w400,),
                     selectionColor: const Color(0xFF2FD9E3).withOpacity(0.12),
                     selectedTextColor: const Color(0xFF2FD9E3),
                     onDateChange: (date) {
@@ -132,7 +131,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                           bulan: date.month,
                           tahun: date.year,
                           tanggal: date.day,
-                          date: date);
+                          date: date,);
                       _isActive = false;
                     },
                   ),
@@ -150,10 +149,10 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
             ),
             child: BlocBuilder<PrayerCubit, PrayerState>(
               builder: (context, state) {
-                var jadwalSolat = state.jadwalShalat;
-                String notFound = 'Not Found';
+                final jadwalSolat = state.jadwalShalat;
+                const notFound = 'Not Found';
 
-                final List<JadwalSolatModel> listJadwalSholat = [
+                final listJadwalSholat = <JadwalSolatModel>[
                   JadwalSolatModel(
                     icon: Ri.notification_3_line,
                     prayerSchedule: 'Imsak',
@@ -189,26 +188,26 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                 return Column(
                   children: listJadwalSholat.map(
                     (e) {
-                      bool tempActive = false;
-                      String angka = e.prayerTime;
-                      String jam = angka.substring(0, 2);
-                      String menit = angka.substring(3, 5);
-                      int waktuIsya = 20;
+                      var tempActive = false;
+                      final angka = e.prayerTime;
+                      final jam = angka.substring(0, 2);
+                      final menit = angka.substring(3, 5);
+                      var waktuIsya = 20;
                       if (jadwalSolat.isya != null) {
                         waktuIsya =
                             int.parse(jadwalSolat.isya!.substring(0, 2));
                       }
                       if (angka != 'Not Found' && _isActive == false) {
-                        TimeOfDay waktuSolat = TimeOfDay(
-                            hour: int.parse(jam), minute: int.parse(menit));
-                        DateTime now = DateTime.now();
+                        final waktuSolat = TimeOfDay(
+                            hour: int.parse(jam), minute: int.parse(menit),);
+                        final now = DateTime.now();
                         DateTime timeSholat;
                         if (now.hour >= waktuIsya) {
                           timeSholat = DateTime(now.year, now.month,
-                              now.day + 1, waktuSolat.hour, waktuSolat.minute);
+                              now.day + 1, waktuSolat.hour, waktuSolat.minute,);
                         } else {
                           timeSholat = DateTime(now.year, now.month, now.day,
-                              waktuSolat.hour, waktuSolat.minute);
+                              waktuSolat.hour, waktuSolat.minute,);
                         }
                         if (timeSholat.isAfter(now)) {
                           _isActive = true;
@@ -222,7 +221,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                           vertical: 8,
                         ),
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 17),
+                            horizontal: 24, vertical: 17,),
                         width: double.infinity,
                         decoration: BoxDecoration(
                             color: tempActive
@@ -235,7 +234,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                                 offset: Offset(0, 2),
                                 blurRadius: 0.9,
                               ),
-                            ]),
+                            ],),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -244,7 +243,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                                 Iconify(e.icon,
                                     color: tempActive
                                         ? Colors.white
-                                        : Colors.black),
+                                        : Colors.black,),
                                 const SizedBox(
                                   width: 14,
                                 ),
@@ -265,7 +264,7 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
                               style: GoogleFonts.poppins(
                                   color:
                                       tempActive ? Colors.white : Colors.black,
-                                  fontSize: 12),
+                                  fontSize: 12,),
                             ),
                           ],
                         ),

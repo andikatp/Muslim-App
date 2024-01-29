@@ -12,7 +12,7 @@ void main() {
   setUp(() {
     mockClient = MockHttpClient();
     remote = PrayerTimeRemoteDataSourceImpl(client: mockClient);
-     registerFallbackValue(Uri());
+    registerFallbackValue(Uri());
   });
 
   const tMap = {
@@ -34,8 +34,8 @@ void main() {
     when(() => mockClient.get(any()))
         .thenAnswer((_) async => http.Response(tMap.toString(), 200));
     // act
-    await remote.getPrayerTime('Banda Aceh', 2024, 1, 30);
+    await remote.getPrayerTime(2024, 1, 30);
     // assert
-    // verify(() => mockClient).called(1);
+    verify(() => mockClient).called(1);
   });
 }
