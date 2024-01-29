@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/gis.dart';
 
-class AppBarJadwalWidget extends StatelessWidget with PreferredSizeWidget {
+class AppBarJadwalWidget extends StatelessWidget implements  PreferredSizeWidget {
   const AppBarJadwalWidget({super.key});
 
   @override

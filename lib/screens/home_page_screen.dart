@@ -23,13 +23,16 @@ class _HomePageScreenState extends State<HomePageScreen> {
           SvgPicture.asset(
             'assets/Group.svg',
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Text(
             'Untuk Anda',
             style: GoogleFonts.poppins(
-                fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white),
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
@@ -60,13 +63,13 @@ class _HomePageScreenState extends State<HomePageScreen> {
           fontWeight: FontWeight.w400,
         ),
       ),
-    )
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF5B49ED),
+      backgroundColor: const Color(0xFF5B49ED),
       body: Stack(
         children: [
           Image.asset(
@@ -76,260 +79,277 @@ class _HomePageScreenState extends State<HomePageScreen> {
             fit: BoxFit.cover,
           ),
           SingleChildScrollView(
-            child: Column(children: [
-              Container(
-                height: 330,
-                padding: EdgeInsets.only(top: 60),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Selamat Datang',
-                                style: GoogleFonts.poppins(
+            child: Column(
+              children: [
+                Container(
+                  height: 330,
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Selamat Datang',
+                                  style: GoogleFonts.poppins(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w300,
-                                    color: Colors.white),
-                              ),
-                              SizedBox(height: 5),
-                              Text(
-                                'Minarwati',
-                                style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                Text(
+                                  'Minarwati',
+                                  style: GoogleFonts.poppins(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.edit_notifications_outlined,
-                                color: Colors.white,
-                                size: 28,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              CircleAvatar(
-                                radius: 35,
-                                backgroundColor: Colors.white,
-                                child: CircleAvatar(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Row(
+                              children: [
+                                Icon(
+                                  Icons.edit_notifications_outlined,
+                                  color: Colors.white,
+                                  size: 28,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                CircleAvatar(
+                                  radius: 35,
+                                  backgroundColor: Colors.white,
+                                  child: CircleAvatar(
                                     radius: 32,
                                     backgroundImage:
-                                        AssetImage('assets/Ellipse.png')),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
+                                        AssetImage('assets/Ellipse.png'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
                             floatingLabelBehavior: FloatingLabelBehavior.never,
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none,
+                            ),
                             fillColor: Colors.white,
                             filled: true,
                             prefixIcon: Icon(
                               Icons.search,
                               color: Colors.black.withOpacity(0.5),
                             ),
-                            contentPadding: EdgeInsets.all(19),
+                            contentPadding: const EdgeInsets.all(19),
                             labelText: 'Cari Kajian Menarik...',
                             labelStyle: GoogleFonts.poppins(fontSize: 16),
                             suffixIcon: Container(
-                              margin: EdgeInsets.only(right: 7),
+                              margin: const EdgeInsets.only(right: 7),
                               height: 48,
                               width: 48,
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Color(0xFF2FD9E3),
+                                color: const Color(0xFF2FD9E3),
                               ),
-                              child: Iconify(
+                              child: const Iconify(
                                 Carbon.settings_adjust,
                                 color: Colors.white,
                               ),
-                            )),
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          AvatarUstadWidget(
-                            image: 'assets/ustad1.png',
-                            borderColor: Colors.green,
-                            containerColor: Color(0xFFFF4E4C),
-                            label: 'Pillar Iman',
-                            labelContainer: 'Live',
-                          ),
-                          AvatarUstadWidget(
-                            image: 'assets/ustad2.png',
-                            borderColor: Colors.green,
-                            containerColor: Color(0xFFFF4E4C),
-                            label: 'Kultum Islami',
-                            labelContainer: 'Live',
-                          ),
-                          AvatarUstadWidget(
-                            image: 'assets/ustad3.png',
-                            borderColor: Colors.white,
-                            containerColor: Colors.blue,
-                            label: 'Indahnya mualaf',
-                            labelContainer: 'Preview',
-                          ),
-                          AvatarUstadWidget(
-                            image: 'assets/ustad4.png',
-                            borderColor: Colors.white,
-                            containerColor: Colors.amber,
-                            label: 'Aqiqah',
-                            labelContainer: 'Replay',
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 13,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 42),
-                decoration: BoxDecoration(
-                  color: Color(0xFFF2F1EF),
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(30),
-                  ),
-                ),
-                height: 391,
-                width: double.infinity,
-                child: Column(children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: List.generate(
-                          navigation.length,
-                          (index) {
-                            return GestureDetector(
-                              child: Container(
-                                width: 125,
-                                margin: EdgeInsets.only(right: 10),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 12, vertical: 10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: tappedIndex == index
-                                      ? Color(0xFF2FD9E3)
-                                      : Colors.white,
-                                ),
-                                child: Center(child: navigation[index].content),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  tappedIndex = index;
-                                });
-                              },
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: Colors.white),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/Rectangle.jpg',
-                            fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        SizedBox(
-                          height: 8,
+                        const SizedBox(
+                          height: 24,
                         ),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Tadarus Bulan Ramadhan',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12, fontWeight: FontWeight.w700),
+                            AvatarUstadWidget(
+                              image: 'assets/ustad1.png',
+                              borderColor: Colors.green,
+                              containerColor: Color(0xFFFF4E4C),
+                              label: 'Pillar Iman',
+                              labelContainer: 'Live',
                             ),
-                            Text(
-                              'Baru Saja',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.amber),
+                            AvatarUstadWidget(
+                              image: 'assets/ustad2.png',
+                              borderColor: Colors.green,
+                              containerColor: Color(0xFFFF4E4C),
+                              label: 'Kultum Islami',
+                              labelContainer: 'Live',
+                            ),
+                            AvatarUstadWidget(
+                              image: 'assets/ustad3.png',
+                              borderColor: Colors.white,
+                              containerColor: Colors.blue,
+                              label: 'Indahnya mualaf',
+                              labelContainer: 'Preview',
+                            ),
+                            AvatarUstadWidget(
+                              image: 'assets/ustad4.png',
+                              borderColor: Colors.white,
+                              containerColor: Colors.amber,
+                              label: 'Aqiqah',
+                              labelContainer: 'Replay',
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage:
-                                      AssetImage('assets/ustad2.png'),
-                                  radius: 10,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  'oleh Ustad Rifky',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 9, fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            Iconify(
-                              Bi.bookmark,
-                              color: Colors.black.withOpacity(0.5),
-                              size: 24,
-                            )
-                          ],
+                        const SizedBox(
+                          height: 13,
                         ),
                       ],
                     ),
-                  )
-                ]),
-              ),
-            ]),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 42),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFF2F1EF),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(30),
+                    ),
+                  ),
+                  height: 391,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 8,),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                              navigation.length,
+                              (index) {
+                                return GestureDetector(
+                                  child: Container(
+                                    width: 125,
+                                    margin: const EdgeInsets.only(right: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 12,
+                                      vertical: 10,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: tappedIndex == index
+                                          ? const Color(0xFF2FD9E3)
+                                          : Colors.white,
+                                    ),
+                                    child: Center(
+                                        child: navigation[index].content,),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      tappedIndex = index;
+                                    });
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                'assets/Rectangle.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Tadarus Bulan Ramadhan',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                Text(
+                                  'Baru Saja',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.amber,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    const CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/ustad2.png'),
+                                      radius: 10,
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'oleh Ustad Rifky',
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Iconify(
+                                  Bi.bookmark,
+                                  color: Colors.black.withOpacity(0.5),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -371,7 +391,7 @@ class AvatarUstadWidget extends StatelessWidget {
             Positioned(
               bottom: -3,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
                 decoration: BoxDecoration(
                   color: containerColor,
                   borderRadius: BorderRadius.circular(20),
@@ -380,21 +400,25 @@ class AvatarUstadWidget extends StatelessWidget {
                   child: Text(
                     labelContainer,
                     style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 7,
-                        fontWeight: FontWeight.w400),
+                      color: Colors.white,
+                      fontSize: 7,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
           label,
           style: GoogleFonts.poppins(
-              fontSize: 9, color: Colors.white, fontWeight: FontWeight.w500),
-        )
+            fontSize: 9,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ],
     );
   }
