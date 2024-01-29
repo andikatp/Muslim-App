@@ -37,41 +37,41 @@ class MyApp extends StatelessWidget {
           create: (BuildContext context) => IsiQuranCubit(),
         ),
       ],
-        child: ScreenUtilInit(
-          designSize: const Size(412, 732),
-          minTextAdapt: true,
-          builder: (context, child) => GestureDetector(
-            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              routerConfig: router,
+      //   child: ScreenUtilInit(
+      //     designSize: const Size(412, 732),
+      //     minTextAdapt: true,
+      //     builder: (context, child) => GestureDetector(
+      //       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      //       child: MaterialApp.router(
+      //         debugShowCheckedModeBanner: false,
+      //         routerConfig: router,
+      //       ),
+      //     ),
+      //   ),
+      // );
+      child: ScreenUtilInit(
+        designSize: const Size(412, 732),
+        minTextAdapt: true,
+        builder: (context, child) => MaterialApp(
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: const [Locale('id')],
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.white,
+              titleTextStyle: GoogleFonts.poppins(
+                color: Colors.black.withOpacity(0.7),
+                fontSize: 12,
+              ),
             ),
           ),
+          debugShowCheckedModeBanner: false,
+          home: const MainScreen(),
         ),
-      );
-    //   child: ScreenUtilInit(
-    //     designSize: const Size(412, 732),
-    //     minTextAdapt: true,
-    //     builder: (context, child) => MaterialApp(
-    //       localizationsDelegates: const [
-    //         GlobalMaterialLocalizations.delegate,
-    //         GlobalCupertinoLocalizations.delegate,
-    //         GlobalWidgetsLocalizations.delegate,
-    //       ],
-    //       supportedLocales: const [Locale('id')],
-    //       theme: ThemeData(
-    //         appBarTheme: AppBarTheme(
-    //           backgroundColor: Colors.white,
-    //           titleTextStyle: GoogleFonts.poppins(
-    //             color: Colors.black.withOpacity(0.7),
-    //             fontSize: 12,
-    //           ),
-    //         ),
-    //       ),
-    //       debugShowCheckedModeBanner: false,
-    //       home: const MainScreen(),
-    //     ),
-    //   ),
-    // );
+      ),
+    );
   }
 }

@@ -4,17 +4,17 @@ import 'package:jadwal_solat/models/prayer_time_api_model.dart';
 
 class PrayerService {
   Future<Value> getPrayerTime(
-      {int tahun = 2022, int bulan = 01, int tanggal = 01}) async {
+      {int tahun = 2022, int bulan = 01, int tanggal = 01,}) async {
     final uri = Uri.parse(
-        'https://api.myquran.com/v1/sholat/jadwal/0119/$tahun/$bulan/$tanggal');
-    http.Response response = await http.get(uri);
-    var getData = jsonDecode(response.body);
+        'https://api.myquran.com/v2/sholat/jadwal/0119/$tahun/$bulan/$tanggal',);
+    final response = await http.get(uri);
+    final getData = jsonDecode(response.body);
     if (response.statusCode == 200) {
-      var data = PrayerData.fromJson(getData);
-      if (data.value == null) throw ('Data tidak Ada');
+      final data = PrayerData.fromJson(getData);
+      if (data.value == null) throw 'Data tidak Ada';
       return data.value!;
     } else {
-      throw ('Error code : ${response.statusCode}');
+      throw 'Error code : ${response.statusCode}';
     }
   }
 }

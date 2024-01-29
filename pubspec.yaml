@@ -25,8 +25,10 @@ dependencies:
   google_fonts: ^6.1.0
   http: ^1.2.0
   iconify_flutter: ^0.0.4
+  internet_connection_checker_plus: ^2.2.0
   intl: ^0.18.1
   meta: ^1.10.0
+  mocktail: ^1.0.3
   persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
