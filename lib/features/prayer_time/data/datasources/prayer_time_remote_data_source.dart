@@ -1,17 +1,16 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:jadwal_solat/core/constants/app_constant.dart';
 import 'package:jadwal_solat/core/errors/exception.dart';
 import 'package:jadwal_solat/core/utils/typedef.dart';
 import 'package:jadwal_solat/features/prayer_time/data/models/prayer_time_model.dart';
-import 'package:http/http.dart' as http;
 
 abstract class PrayerTimeRemoteDataSource {
   const PrayerTimeRemoteDataSource();
 
   Future<PrayerTimeModel> getPrayerTime(
-    String cityName,
     int year,
     int month,
     int date,
@@ -26,7 +25,6 @@ class PrayerTimeRemoteDataSourceImpl implements PrayerTimeRemoteDataSource {
 
   @override
   Future<PrayerTimeModel> getPrayerTime(
-    String cityName,
     int year,
     int month,
     int date,

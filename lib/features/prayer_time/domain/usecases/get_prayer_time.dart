@@ -13,7 +13,6 @@ class GetPrayerTime
   @override
   ResultFuture<PrayerTimeEntity> call(GetPrayerTimeParams params) {
     return _repository.getPrayerTime(
-      params.cityName,
       params.year,
       params.month,
       params.date,
@@ -23,13 +22,11 @@ class GetPrayerTime
 
 class GetPrayerTimeParams {
   GetPrayerTimeParams({
-    required this.cityName,
     required this.year,
     required this.month,
     required this.date,
   });
 
-  final String cityName;
   final int year;
   final int month;
   final int date;

@@ -5,7 +5,6 @@ abstract class PrayerTimeRepo {
   const PrayerTimeRepo();
 
   ResultFuture<PrayerTimeEntity> getPrayerTime(
-    String cityName,
     int year,
     int month,
     int date,
