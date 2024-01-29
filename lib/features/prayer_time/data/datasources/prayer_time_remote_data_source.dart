@@ -39,7 +39,7 @@ class PrayerTimeRemoteDataSourceImpl implements PrayerTimeRemoteDataSource {
       }
       final decode = jsonDecode(response.body) as ResultMap;
       final data =
-          (decode['location'] as Map<String, dynamic>)['jadwal'] as ResultMap;
+          (decode['data'] as Map<String, dynamic>)['jadwal'] as ResultMap;
       final result = PrayerTimeModel.fromJson(data);
       return result;
     } catch (e, s) {

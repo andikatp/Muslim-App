@@ -2,7 +2,7 @@ part of 'injection_container.dart';
 
 final sl = GetIt.instance;
 
-void main() async {
+Future<void> init() async {
   await _initPrayerTime();
 }
 
@@ -19,6 +19,6 @@ Future<void> _initPrayerTime() async {
     ..registerLazySingleton<NetworkInfo>(
       () => NetworkInfoImpl(networkInfo: sl()),
     )
-    ..registerLazySingleton(() => InternetConnection.new)
-    ..registerLazySingleton(() => http.Client.new);
+    ..registerLazySingleton(InternetConnection.new)
+    ..registerLazySingleton(http.Client.new);
 }
