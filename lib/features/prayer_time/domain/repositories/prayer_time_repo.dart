@@ -8,5 +8,6 @@ abstract class PrayerTimeRepo {
     String cityName,
     int year,
     int month,
+    int date,
   );
 }

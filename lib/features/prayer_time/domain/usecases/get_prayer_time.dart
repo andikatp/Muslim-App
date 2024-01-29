@@ -5,12 +5,19 @@ import 'package:jadwal_solat/features/prayer_time/domain/repositories/prayer_tim
 
 class GetPrayerTime
     implements UseCaseWithParams<PrayerTimeEntity, GetPrayerTimeParams> {
-  GetPrayerTime({required this.repository});
-  final PrayerTimeRepo repository;
+  GetPrayerTime({required PrayerTimeRepo repository})
+      : _repository = repository;
+
+  final PrayerTimeRepo _repository;
 
   @override
   ResultFuture<PrayerTimeEntity> call(GetPrayerTimeParams params) {
-    return repository.getPrayerTime(params.cityName, params.year, params.month);
+    return _repository.getPrayerTime(
+      params.cityName,
+      params.year,
+      params.month,
+      params.date,
+    );
   }
 }
 
@@ -19,9 +26,11 @@ class GetPrayerTimeParams {
     required this.cityName,
     required this.year,
     required this.month,
+    required this.date,
   });
 
   final String cityName;
   final int year;
   final int month;
+  final int date;
 }
