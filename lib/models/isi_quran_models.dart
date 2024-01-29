@@ -4,7 +4,8 @@
 
 import 'dart:convert';
 
-BacaQuran bacaQuranFromJson(String str) => BacaQuran.fromJson(json.decode(str));
+BacaQuran bacaQuranFromJson(String str) =>
+    BacaQuran.fromJson(json.decode(str) as Map<String, dynamic>);
 
 String bacaQuranToJson(BacaQuran data) => json.encode(data.toJson());
 
@@ -24,6 +25,21 @@ class BacaQuran {
     this.suratSebelumnya,
   });
 
+  factory BacaQuran.fromJson(Map<String, dynamic> json) => BacaQuran(
+        nomor: json['nomor'] as int?,
+        nama: json['nama'] as String?,
+        namaLatin: json['nama_latin'] as String?,
+        jumlahAyat: json['jumlah_ayat'] as int?,
+        tempatTurun: json['tempat_turun'] as String?,
+        arti: json['arti'] as String?,
+        deskripsi: json['deskripsi'] as String?,
+        audio: json['audio'] as String?,
+        status: json['status'] as bool?,
+        ayat: List<Ayat>.from(
+          (json['ayat'] as List<Map<String, dynamic>>).map(Ayat.fromJson),
+        ),
+      );
+
   int? nomor;
   String? nama;
   String? namaLatin;
@@ -37,34 +53,19 @@ class BacaQuran {
   SuratSenya? suratSelanjutnya;
   SuratSenya? suratSebelumnya;
 
-  factory BacaQuran.fromJson(Map<String, dynamic> json) => BacaQuran(
-        nomor: json["nomor"],
-        nama: json["nama"],
-        namaLatin: json["nama_latin"],
-        jumlahAyat: json["jumlah_ayat"],
-        tempatTurun: json["tempat_turun"],
-        arti: json["arti"],
-        deskripsi: json["deskripsi"],
-        audio: json["audio"],
-        status: json["status"],
-        ayat: List<Ayat>.from(json["ayat"].map((x) => Ayat.fromJson(x))),
-        suratSelanjutnya: null,
-        suratSebelumnya: null,
-      );
-
   Map<String, dynamic> toJson() => {
-        "nomor": nomor,
-        "nama": nama,
-        "nama_latin": namaLatin,
-        "jumlah_ayat": jumlahAyat,
-        "tempat_turun": tempatTurun,
-        "arti": arti,
-        "deskripsi": deskripsi,
-        "audio": audio,
-        "status": status,
-        "ayat": List<dynamic>.from(ayat!.map((x) => x.toJson())),
-        "surat_selanjutnya": null,
-        "surat_sebelumnya": null,
+        'nomor': nomor,
+        'nama': nama,
+        'nama_latin': namaLatin,
+        'jumlah_ayat': jumlahAyat,
+        'tempat_turun': tempatTurun,
+        'arti': arti,
+        'deskripsi': deskripsi,
+        'audio': audio,
+        'status': status,
+        'ayat': List<dynamic>.from(ayat!.map((x) => x.toJson())),
+        'surat_selanjutnya': null,
+        'surat_sebelumnya': null,
       };
 }
 
@@ -78,6 +79,15 @@ class Ayat {
     this.idn,
   });
 
+  factory Ayat.fromJson(Map<String, dynamic> json) => Ayat(
+        id: json['id'] as int?,
+        surah: json['surah'] as int?,
+        nomor: json['nomor'] as int?,
+        ar: json['ar'] as String?,
+        tr: json['tr'] as String?,
+        idn: json['idn'] as String?,
+      );
+
   int? id;
   int? surah;
   int? nomor;
@@ -85,22 +95,13 @@ class Ayat {
   String? tr;
   String? idn;
 
-  factory Ayat.fromJson(Map<String, dynamic> json) => Ayat(
-        id: json["id"],
-        surah: json["surah"],
-        nomor: json["nomor"],
-        ar: json["ar"],
-        tr: json["tr"],
-        idn: json["idn"],
-      );
-
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "surah": surah,
-        "nomor": nomor,
-        "ar": ar,
-        "tr": tr,
-        "idn": idn,
+        'id': id,
+        'surah': surah,
+        'nomor': nomor,
+        'ar': ar,
+        'tr': tr,
+        'idn': idn,
       };
 }
 
@@ -117,6 +118,18 @@ class SuratSenya {
     this.audio,
   });
 
+  factory SuratSenya.fromJson(Map<String, dynamic> json) => SuratSenya(
+        id: json['id'] as int?,
+        nomor: json['nomor'] as int?,
+        nama: json['nama'] as String?,
+        namaLatin: json['nama_latin'] as String?,
+        jumlahAyat: json['jumlah_ayat'] as int?,
+        tempatTurun: json['tempat_turun'] as String?,
+        arti: json['arti'] as String?,
+        deskripsi: json['deskripsi'] as String?,
+        audio: json['audio'] as String?,
+      );
+
   int? id;
   int? nomor;
   String? nama;
@@ -127,27 +140,15 @@ class SuratSenya {
   String? deskripsi;
   String? audio;
 
-  factory SuratSenya.fromJson(Map<String, dynamic> json) => SuratSenya(
-        id: json["id"],
-        nomor: json["nomor"],
-        nama: json["nama"],
-        namaLatin: json["nama_latin"],
-        jumlahAyat: json["jumlah_ayat"],
-        tempatTurun: json["tempat_turun"],
-        arti: json["arti"],
-        deskripsi: json["deskripsi"],
-        audio: json["audio"],
-      );
-
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "nomor": nomor,
-        "nama": nama,
-        "nama_latin": namaLatin,
-        "jumlah_ayat": jumlahAyat,
-        "tempat_turun": tempatTurun,
-        "arti": arti,
-        "deskripsi": deskripsi,
-        "audio": audio,
+        'id': id,
+        'nomor': nomor,
+        'nama': nama,
+        'nama_latin': namaLatin,
+        'jumlah_ayat': jumlahAyat,
+        'tempat_turun': tempatTurun,
+        'arti': arti,
+        'deskripsi': deskripsi,
+        'audio': audio,
       };
 }
