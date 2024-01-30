@@ -21,7 +21,7 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final router = GoRouter(
   navigatorKey: navigatorKey,
   debugLogDiagnostics: true,
-  initialLocation: '/jadwal',
+  initialLocation: '/quran',
   routerNeglect: true,
   routes: [
     GoRoute(

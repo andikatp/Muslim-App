@@ -32,12 +32,7 @@ Future<void> _initQuran() async {
     ..registerLazySingleton<QuranRepo>(
       () => QuranRepoImpl(networkInfo: sl(), remote: sl()),
     )
-    ..registerLazySingleton<NetworkInfo>(
-      () => NetworkInfoImpl(networkInfo: sl()),
-    )
     ..registerLazySingleton<QuranRemoteDataSource>(
       () => QuranRemoteDataSourceImpl(client: sl()),
-    )
-    ..registerLazySingleton(http.Client.new)
-    ..registerLazySingleton(InternetConnection.new);
+    );
 }
