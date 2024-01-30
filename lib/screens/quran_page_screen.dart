@@ -30,13 +30,13 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
       backgroundColor: const Color(0xFFF2F1EF),
       body: ListView(
         padding: EdgeInsets.zero,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           Container(
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(30))),
+                    BorderRadius.vertical(bottom: Radius.circular(30)),),
             height: 246,
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(20, 65, 20, 20),
@@ -47,10 +47,10 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                   Text(
                     'Al-Quran',
                     style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500, fontSize: 18),
+                        fontWeight: FontWeight.w500, fontSize: 18,),
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Icon(
                         Icons.notifications_active_outlined,
                         size: 18,
@@ -61,7 +61,7 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                       CircleAvatar(
                         radius: 28,
                         backgroundImage: AssetImage('assets/Ellipse.png'),
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -93,27 +93,26 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               'Terakhir Dibaca',
                               style: GoogleFonts.poppins(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w300,
-                                  color: Colors.white),
+                                  color: Colors.white,),
                             ),
                             Text(
                               'Al-Haqqah : 1',
                               style: GoogleFonts.poppins(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.white),
+                                  color: Colors.white,),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
-                    Container(
+                    SizedBox(
                       height: 27,
                       child: Text(
                         'اَلْحَاۤقَّةُۙ',
@@ -127,8 +126,8 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                     ),
                   ],
                 ),
-              )
-            ]),
+              ),
+            ],),
           ),
           Container(
             width: double.infinity,
@@ -136,7 +135,7 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30)),
+                color: Colors.white, borderRadius: BorderRadius.circular(30),),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
@@ -153,10 +152,10 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                         boxShadow: tappedIndex == index
                             ? [
                                 BoxShadow(
-                                  color: Color(0xFF2FD9E3).withOpacity(0.5),
-                                  offset: Offset(0, 2),
-                                  blurRadius: 6.0,
-                                )
+                                  color: const Color(0xFF2FD9E3).withOpacity(0.5),
+                                  offset: const Offset(0, 2),
+                                  blurRadius: 6,
+                                ),
                               ]
                             : null,
                         borderRadius: BorderRadius.circular(30),
@@ -167,8 +166,8 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                         style: GoogleFonts.poppins(
                             color: tappedIndex == index
                                 ? Colors.white
-                                : Colors.black),
-                      )),
+                                : Colors.black,),
+                      ),),
                     ),
                     onTap: () {
                       setState(() {
@@ -184,19 +183,19 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
             builder: (context, state) {
               return ListView.separated(
                   padding: EdgeInsets.zero,
-                  scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
+                          horizontal: 30, vertical: 10,),
                       child: ListTile(
                         onTap: () {
                           print(index + 1);
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => QuranReadScreen(halaman: index+1,)));
-                          
+                              builder: (_) => QuranReadScreen(
+                                    halaman: index + 1,
+                                  ),),);
                         },
                         leading: CircleAvatar(
                           radius: 22,
@@ -208,21 +207,21 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                           style: GoogleFonts.poppins(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: Colors.black.withOpacity(0.75)),
+                              color: Colors.black.withOpacity(0.75),),
                         ),
                         subtitle: Text(
                           '${state.dataSurah[index].arti} (${state.dataSurah[index].jumlahAyat})',
                           style: GoogleFonts.poppins(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(0.75)),
+                              color: Colors.black.withOpacity(0.75),),
                         ),
                         trailing: Text(
                           state.dataSurah[index].nama ?? 'Tidak ada Nama',
                           style: GoogleFonts.poppins(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: Colors.black.withOpacity(0.75)),
+                              color: Colors.black.withOpacity(0.75),),
                         ),
                       ),
                     );
@@ -234,9 +233,9 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                           color: Colors.black.withOpacity(0.5),
                         ),
                       ),
-                  itemCount: state.dataSurah.length);
+                  itemCount: state.dataSurah.length,);
             },
-          )
+          ),
         ],
       ),
     );
