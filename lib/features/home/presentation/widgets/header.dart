@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/carbon.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
@@ -47,7 +46,7 @@ class Header extends StatelessWidget {
     const userName = 'user';
 
     return Container(
-      height: context.media.height * 0.45,
+      height: 0.45.sh,
       padding: REdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

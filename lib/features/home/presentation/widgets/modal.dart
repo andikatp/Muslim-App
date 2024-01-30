@@ -22,7 +22,7 @@ class _ModalState extends State<Modal> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.media.height * 0.6,
+      height: 0.6.sh,
       padding: REdgeInsets.symmetric(horizontal: 20, vertical: 30),
       decoration: BoxDecoration(
         color: Colours.backgroundColor,

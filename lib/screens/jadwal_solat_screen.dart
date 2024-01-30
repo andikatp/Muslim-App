@@ -8,7 +8,6 @@ import 'package:iconify_flutter/icons/ri.dart';
 import 'package:intl/intl.dart';
 import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/prayer_cubit.dart';
-import 'package:jadwal_solat/features/prayer_time/data/models/prayer_time_model.dart';
 import 'package:jadwal_solat/models/jadwal_solat_model.dart';
 import 'package:jadwal_solat/widget/date_picker_v2_widget.dart';
 import 'package:jadwal_solat/features/prayer_time/presentation/widgets/app_bar_jadwal_widget.dart';
@@ -163,40 +162,39 @@ class _JadwalSolatScreenState extends State<JadwalSolatScreen> {
             ),
             child: BlocBuilder<PrayerCubit, PrayerState>(
               builder: (context, state) {
-                final jadwalSolat = state.jadwalShalat.ashar.isEmpty
-                    ? const PrayerTimeModel.empty()
-                    : state.jadwalShalat;
-                print(jadwalSolat);
+                final jadwalSolat = state.jadwalShalat;
+                const notFound = 'Not Found';
+
                 final listJadwalSholat = <JadwalSolatModel>[
                   JadwalSolatModel(
                     icon: Ri.notification_3_line,
                     prayerSchedule: 'Imsak',
-                    prayerTime: jadwalSolat.imsak,
+                    prayerTime: jadwalSolat.imsak ?? notFound,
                   ),
                   JadwalSolatModel(
                     icon: Ph.sun_horizon_light,
                     prayerSchedule: 'Subuh',
-                    prayerTime: jadwalSolat.subuh,
+                    prayerTime: jadwalSolat.subuh ?? notFound,
                   ),
                   JadwalSolatModel(
                     icon: Ph.sun_light,
                     prayerSchedule: 'Dzuhur',
-                    prayerTime: jadwalSolat.dzuhur,
+                    prayerTime: jadwalSolat.dzuhur ?? notFound,
                   ),
                   JadwalSolatModel(
                     icon: Ph.cloud_sun_light,
                     prayerSchedule: 'Ashar',
-                    prayerTime: jadwalSolat.ashar,
+                    prayerTime: jadwalSolat.ashar ?? notFound,
                   ),
                   JadwalSolatModel(
                     icon: Ph.cloud_moon_light,
                     prayerSchedule: 'Magrib',
-                    prayerTime: jadwalSolat.maghrib,
+                    prayerTime: jadwalSolat.maghrib ?? notFound,
                   ),
                   JadwalSolatModel(
                     icon: Bi.moon_stars,
                     prayerSchedule: 'Isya',
-                    prayerTime: jadwalSolat.isya,
+                    prayerTime: jadwalSolat.isya ?? notFound,
                   ),
                 ];
 
