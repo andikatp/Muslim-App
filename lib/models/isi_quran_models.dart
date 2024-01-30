@@ -35,8 +35,8 @@ class BacaQuran {
         deskripsi: json['deskripsi'] as String?,
         audio: json['audio'] as String?,
         status: json['status'] as bool?,
-        ayat: List<Ayat>.from(
-          (json['ayat'] as List<Map<String, dynamic>>).map(Ayat.fromJson),
+        ayat: List<Ayats>.from(
+          (json['ayat'] as List<Map<String, dynamic>>).map(Ayats.fromJson),
         ),
       );
 
@@ -49,7 +49,7 @@ class BacaQuran {
   String? deskripsi;
   String? audio;
   bool? status;
-  List<Ayat>? ayat;
+  List<Ayats>? ayat;
   SuratSenya? suratSelanjutnya;
   SuratSenya? suratSebelumnya;
 
@@ -69,8 +69,8 @@ class BacaQuran {
       };
 }
 
-class Ayat {
-  Ayat({
+class Ayats {
+  Ayats({
     this.id,
     this.surah,
     this.nomor,
@@ -79,7 +79,7 @@ class Ayat {
     this.idn,
   });
 
-  factory Ayat.fromJson(Map<String, dynamic> json) => Ayat(
+  factory Ayats.fromJson(Map<String, dynamic> json) => Ayats(
         id: json['id'] as int?,
         surah: json['surah'] as int?,
         nomor: json['nomor'] as int?,
