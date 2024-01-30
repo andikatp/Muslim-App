@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jadwal_solat/core/constants/colours.dart';
+import 'package:jadwal_solat/features/quran/presentation/widgets/header.dart';
+import 'package:jadwal_solat/features/quran/presentation/widgets/last_read.dart';
+import 'package:jadwal_solat/features/quran/presentation/widgets/quran_list.dart';
+import 'package:jadwal_solat/features/quran/presentation/widgets/tabbar_quran.dart';
 
 class QuranPage extends StatelessWidget {
   const QuranPage({super.key});
@@ -8,21 +12,13 @@ class QuranPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colours.backgroundColor,
-      appBar: AppBar(
-        title: const Text('Al-Quran'),
-        actions: const [
-          Icon(
-            Icons.notifications_active_outlined,
-            size: 18,
-          ),
-          CircleAvatar(
-            radius: 28,
-            backgroundImage: AssetImage('assets/Ellipse.png'),
-          ),
-        ],
-      ),
+      appBar: const Header(),
       body: ListView(
-        
+        children: const [
+          LastRead(),
+          TabbarQuran(),
+          QuranList(),
+        ],
       ),
     );
   }

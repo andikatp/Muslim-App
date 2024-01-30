@@ -26,8 +26,8 @@ class QuranRemoteDataSourceImpl implements QuranRemoteDataSource {
       if (response.statusCode != 200) {
         throw ServerException(message: response.body);
       }
-      final decode = jsonDecode(response.body) as List<ResultMap>;
-      return decode.map(QuranModel.fromJson).toList();
+      final decode = jsonDecode(response.body) as List<dynamic>;
+      return decode.map((e) =>  QuranModel.fromJson(e as ResultMap)).toList();
     } catch (e, s) {
       debugPrint(s.toString());
       throw ServerException(message: e.toString());
