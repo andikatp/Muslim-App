@@ -121,6 +121,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.10"
+  easy_date_timeline:
+    dependency: "direct main"
+    description:
+      name: easy_date_timeline
+      sha256: "645b2021f921f79f29c8ca56d7fbf93b119261bf8c62a0fa0a2ce28c4e17070d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   equatable:
     dependency: "direct main"
     description:
