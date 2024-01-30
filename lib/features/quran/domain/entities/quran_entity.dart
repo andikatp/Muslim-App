@@ -1,4 +1,6 @@
-abstract class QuranEntity {
+import 'package:equatable/equatable.dart';
+
+abstract class QuranEntity extends Equatable {
   const QuranEntity({
     required this.nomor,
     required this.nama,
@@ -21,4 +23,7 @@ abstract class QuranEntity {
   final String namaLatin;
   final int jumlahAyat;
   final String arti;
+
+  @override
+  List<Object> get props => [nomor, nama, namaLatin, jumlahAyat, arti];
 }
