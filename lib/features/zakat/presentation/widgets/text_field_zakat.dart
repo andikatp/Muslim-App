@@ -9,10 +9,12 @@ class TextFieldZakat extends StatelessWidget {
   const TextFieldZakat({
     required this.controller,
     required this.title,
+    this.agriculture,
     this.function,
     super.key,
   });
   final void Function(String)? function;
+  final bool? agriculture;
   final String title;
   final TextEditingController controller;
 
@@ -41,9 +43,9 @@ class TextFieldZakat extends StatelessWidget {
           ],
           decoration: InputDecoration(
             hintText: '0',
-            prefixIcon: const Padding(
-              padding: EdgeInsets.all(15),
-              child: Text('Rp.'),
+            prefixIcon:  Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text(agriculture != null  ? 'Kg' : 'Rp.'),
             ),
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             enabledBorder: OutlineInputBorder(
