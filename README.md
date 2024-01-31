@@ -20,6 +20,7 @@ A Modest Flutter project to track shalat shedule, read quran, and calculate zaka
 
 - **Shalat Reminder**: Receive timely reminders for prayer times.
 - **Shalat Schedule**: Maintain a personalized schedule of prayer times.
+- **Next Shalat**: Showing what prayer should be performed next.
 - **Quran Reader**:  Access and read the Quran conveniently.
 - **Zakat Calculator**: Calculate and manage your Zakat obligations easily.
 
