@@ -1,13 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/eva.dart';
+import 'package:iconify_flutter/icons/ion.dart';
 
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+  const DashboardPage({required this.navigationShell, Key? key})
+      : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
+  final StatefulNavigationShell navigationShell;
+
+  void _goBranch(int index) {
+    navigationShell.goBranch(
+      index,
+      initialLocation: index == navigationShell.currentIndex,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const IndexedStack(),
-      bottomNavigationBar: BottomNavigationBar(items: const []),
+      backgroundColor: Colors.white,
+      body: navigationShell,
+      bottomNavigationBar: NavigationBar(
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        backgroundColor: const Color(0x00fcfcfb),
+        elevation: 0,
+        selectedIndex: navigationShell.currentIndex,
+        indicatorColor: Colors.black12,
+        height: 0.1.sh,
+        onDestinationSelected: _goBranch,
+        destinations: [
+          NavigationDestination(
+            icon: SvgPicture.asset('assets/Vector.svg'),
+            label: '',
+            selectedIcon: SvgPicture.asset('assets/VectorHome.svg'),
+          ),
+          NavigationDestination(
+            icon: Iconify(
+              Eva.compass_outline,
+              color: Colors.black.withOpacity(0.5),
+            ),
+            label: '',
+            selectedIcon: const Iconify(
+              Eva.compass_fill,
+              color: Color(0xFF2FD9E3),
+            ),
+          ),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              'assets/book-outline.svg',
+              height: 24,
+              width: 24,
+              color: Colors.black.withOpacity(0.5),
+            ),
+            label: '',
+            selectedIcon: const Iconify(
+              Ion.book_outline,
+              color: Color(0xFF2FD9E3),
+            ),
+          ),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              'assets/person.svg',
+              width: 24,
+              height: 24,
+              color: Colors.black.withOpacity(0.5),
+            ),
+            label: '',
+            selectedIcon: SvgPicture.asset(
+              'assets/person.svg',
+              width: 24,
+              height: 24,
+              color: const Color(0xFF2FD9E3),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
