@@ -13,55 +13,61 @@ final class ZakatInitial extends ZakatState {
 }
 
 final class ZakatEmas extends ZakatState {
-  const ZakatEmas({required this.total});
-  final String total;
+  const ZakatEmas({required this.message, required this.total});
+  final String message;
+  final int total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatProfesi extends ZakatState {
-  const ZakatProfesi({required this.total});
+  const ZakatProfesi({required this.message, required this.total});
+  final String message;
   final String total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatNiaga extends ZakatState {
-  const ZakatNiaga({required this.total});
+  const ZakatNiaga({required this.message, required this.total});
+  final String message;
   final String total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatMal extends ZakatState {
-  const ZakatMal({required this.total});
+  const ZakatMal({required this.message, required this.total});
+  final String message;
   final String total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatFitrah extends ZakatState {
-  const ZakatFitrah({required this.total});
+  const ZakatFitrah({required this.message, required this.total});
+  final String message;
   final String total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatPertanian extends ZakatState {
-  const ZakatPertanian({required this.total});
+  const ZakatPertanian({required this.message, required this.total});
+  final String message;
   final String total;
 
   @override
-  List<Object> get props => [total];
+  List<Object> get props => [message, total];
 }
 
 final class ZakatError extends ZakatState {
-  const ZakatError({required this.message});
+  const ZakatError({ required this.message});
   final String message;
 
   @override

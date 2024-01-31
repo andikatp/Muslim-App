@@ -1,3 +1,4 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
@@ -23,8 +24,18 @@ class TextFieldZakat extends StatelessWidget {
           style: context.textTheme.bodyLarge,
         ),
         TextField(
+          controller: controller,
           cursorColor: Colours.primaryColor,
           autofocus: true,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            CurrencyTextInputFormatter(
+              enableNegative: false,
+              locale: 'id',
+              symbol: '',
+              decimalDigits: 0,
+            ),
+          ],
           decoration: InputDecoration(
             hintText: '0',
             prefixIcon: const Padding(
