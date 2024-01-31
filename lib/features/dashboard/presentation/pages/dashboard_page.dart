@@ -4,8 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/eva.dart';
+import 'package:iconify_flutter/icons/healthicons.dart';
 import 'package:iconify_flutter/icons/ion.dart';
 import 'package:jadwal_solat/core/constants/colours.dart';
+
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({required this.navigationShell, Key? key})
@@ -63,18 +65,16 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
           NavigationDestination(
-            icon: SvgPicture.asset(
-              'assets/person.svg',
-              width: 24,
-              height: 24,
+            icon: Iconify(
+              Healthicons.money_bag_outline,
               color: Colors.black.withOpacity(0.5),
+              size: 28.sp,
             ),
             label: '',
-            selectedIcon: SvgPicture.asset(
-              'assets/person.svg',
-              width: 24,
-              height: 24,
-              color: const Color(0xFF2FD9E3),
+            selectedIcon: Iconify(
+              Healthicons.money_bag,
+              color: Colours.secondaryBlue,
+              size: 28.sp,
             ),
           ),
         ],

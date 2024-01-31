@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jadwal_solat/bloc/isi_quran_cubit.dart';
-import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
-import 'package:jadwal_solat/bloc/prayer_cubit.dart';
 import 'package:jadwal_solat/core/services/injection_container.dart';
 import 'package:jadwal_solat/core/services/router.dart';
+import 'package:jadwal_solat/features/zakat/presentation/cubit/zakat_cubit.dart';
 
-Future<void> main() async  {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await init();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.light,),);
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
 
   runApp(const MyApp());
 }
@@ -24,30 +25,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<PrayerCubit>(
-          create: (BuildContext context) => PrayerCubit(),
-        ),
-        BlocProvider<NamaQuranCubit>(
-          create: (BuildContext context) => NamaQuranCubit(),
-        ),
-        BlocProvider<IsiQuranCubit>(
-          create: (BuildContext context) => IsiQuranCubit(),
-        ),
-      ],
-        child: ScreenUtilInit(
-          designSize: const Size(412, 732),
-          minTextAdapt: true,
-          builder: (context, child) => GestureDetector(
-            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              routerConfig: router,
-            ),
+    return BlocProvider(
+      create: (context) => ZakatCubit(),
+      child: ScreenUtilInit(
+        designSize: const Size(412, 732),
+        minTextAdapt: true,
+        builder: (context, child) => GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            routerConfig: router,
           ),
         ),
-      );
+      ),
+    );
     //   child: ScreenUtilInit(
     //     designSize: const Size(412, 732),
     //     minTextAdapt: true,
