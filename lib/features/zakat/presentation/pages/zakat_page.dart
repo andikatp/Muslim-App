@@ -7,7 +7,6 @@ import 'package:colorful_iconify_flutter/icons/twemoji.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:jadwal_solat/core/commons/widgets/header.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/core/constants/colours.dart';
@@ -21,14 +20,14 @@ class ZakatPage extends StatelessWidget {
     final zakatList = [
       {'label': 'Zakat Emas', 'icon': Noto.coin},
       {'label': 'Zakat Profesi', 'icon': FlatColorIcons.sales_performance},
-      {'label': 'Zakat Niaga', 'icon': Mdi.briefcase_check},
+      {'label': 'Zakat Niaga', 'icon': Noto.briefcase},
       {'label': 'Zakat Mal', 'icon': Logos.treasuredata_icon},
       {'label': 'Zakat Fitrah', 'icon': Fxemoji.cookedrice},
       {'label': 'Zakat Pertanian', 'icon': Twemoji.sheaf_of_rice},
     ];
     return Scaffold(
       backgroundColor: Colours.backgroundColor,
-      appBar: const Header(title: 'Zakat'),
+      appBar: const Header(title: 'Kalkulator Zakat'),
       body: Center(
         child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),

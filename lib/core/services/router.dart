@@ -9,7 +9,15 @@ import 'package:jadwal_solat/features/prayer_time/presentation/pages/prayer_time
 import 'package:jadwal_solat/features/quran/presentation/bloc/quran_bloc.dart';
 import 'package:jadwal_solat/features/quran/presentation/pages/quran_detail_page.dart';
 import 'package:jadwal_solat/features/quran/presentation/pages/quran_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_agriculture_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_fitrah_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_gold_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_gold_trade.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_mal_page.dart';
 import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_profession_page.dart';
+
+part 'router.main.dart';
 
 enum Routes {
   dashboard,
@@ -18,74 +26,10 @@ enum Routes {
   quran,
   detail,
   zakat,
+  zakatGold,
+  zakatProfession,
+  zakatTrade,
+  zakatMal,
+  zakatFitrah,
+  zakatAgriculture,
 }
-
-final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
-
-final router = GoRouter(
-  navigatorKey: _navigatorKey,
-  debugLogDiagnostics: true,
-  initialLocation: '/home',
-  routerNeglect: true,
-  routes: [
-    StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) => DashboardPage(
-        navigationShell: navigationShell,
-      ),
-      branches: [
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/home',
-              name: Routes.home.name,
-              builder: (context, state) => const MainPage(),
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/jadwal',
-              name: Routes.jadwal.name,
-              builder: (context, state) => BlocProvider(
-                create: (context) => sl<PrayerTimeBloc>(),
-                child: const PrayerTimePage(),
-              ),
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/quran',
-              name: Routes.quran.name,
-              builder: (context, state) => BlocProvider(
-                create: (context) => sl<QuranBloc>(),
-                child: const QuranPage(),
-              ),
-              routes: [
-                GoRoute(
-                  path: 'detail',
-                  name: Routes.detail.name,
-                  builder: (context, state) => BlocProvider(
-                    create: (context) => sl<QuranBloc>(),
-                    child: const QuranDetailPage(),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/zakat',
-              name: Routes.zakat.name,
-              builder: (context, state) => const ZakatPage(),
-            ),
-          ],
-        ),
-      ],
-    ),
-  ],
-);
