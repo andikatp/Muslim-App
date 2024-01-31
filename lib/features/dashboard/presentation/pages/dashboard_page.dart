@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/eva.dart';
 import 'package:iconify_flutter/icons/ion.dart';
+import 'package:jadwal_solat/core/constants/colours.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({required this.navigationShell, Key? key})
@@ -28,8 +29,8 @@ class DashboardPage extends StatelessWidget {
         backgroundColor: const Color(0x00fcfcfb),
         elevation: 0,
         selectedIndex: navigationShell.currentIndex,
-        indicatorColor: Colors.black12,
-        height: 0.1.sh,
+        indicatorColor: Colours.backgroundColor,
+        height: 0.08.sh,
         onDestinationSelected: _goBranch,
         destinations: [
           NavigationDestination(

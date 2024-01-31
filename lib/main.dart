@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jadwal_solat/bloc/isi_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/prayer_cubit.dart';

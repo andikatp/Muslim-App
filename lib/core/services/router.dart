@@ -9,6 +9,7 @@ import 'package:jadwal_solat/features/prayer_time/presentation/pages/prayer_time
 import 'package:jadwal_solat/features/quran/presentation/bloc/quran_bloc.dart';
 import 'package:jadwal_solat/features/quran/presentation/pages/quran_detail_page.dart';
 import 'package:jadwal_solat/features/quran/presentation/pages/quran_page.dart';
+import 'package:jadwal_solat/features/zakat/presentation/pages/zakat_page.dart';
 
 enum Routes {
   dashboard,
@@ -16,6 +17,7 @@ enum Routes {
   jadwal,
   quran,
   detail,
+  zakat,
 }
 
 final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
@@ -71,6 +73,15 @@ final router = GoRouter(
                   ),
                 ),
               ],
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/zakat',
+              name: Routes.zakat.name,
+              builder: (context, state) => const ZakatPage(),
             ),
           ],
         ),

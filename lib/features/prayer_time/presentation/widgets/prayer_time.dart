@@ -116,8 +116,8 @@ class PrayerTime extends StatelessWidget {
     }
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.65,
-      minChildSize: 0.65,
+      initialChildSize: 0.6,
+      minChildSize: 0.6,
       builder: (context, scrollController) => Container(
         decoration: BoxDecoration(
           color: Colours.backgroundColor,
