@@ -1,19 +1,65 @@
-# Muslim App
+# 🍔 Muslim App
 
-A simple flutter app with Prayer Schedule and Readable Quran using [API](https://api.myquran.com/v1/sholat/kota/id/1609) for the prayer schedule and [API](https://equran.id/api/surat/{nomor}) for the readable Quran.
+A Modest Flutter project to track shalat shedule, read quran, and calculate zakat using [API](https://api.myquran.com/v2/sholat/kota/id/1609) and [API](https://equran.id/api/surat/{nomor}) developed using CLean Architechture and TDD with more than 50 Tests.
+<table >
+  <tr >
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/1.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/2.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/3.png" height="500" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/4.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/5.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/6.png" height="500" /></td>
+  </tr>
+</table>
 
-# TECHNOLOGY
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
-- google_fonts
-- iconify_flutter
-- date_picker_timeline
-- persistent_bottom_nav_bar
-- flutter_localizations:
-    sdk: flutter  
-- http
-- flutter_bloc: ^8.1.1
-- intl: ^0.17.0
-- flutter_svg: ^1.1.5 
+## 🎉 Features
+
+- **Shalat Reminder**: Receive timely reminders for prayer times.
+- **Shalat Schedule**: Maintain a personalized schedule of prayer times.
+- **Quran Reader**:  Access and read the Quran conveniently.
+- **Zakat Calculator**: Calculate and manage your Zakat obligations easily.
+
+## 🏗️ Architecture
+
+The project follows the principles of Clean Architecture, emphasizing separation of concerns and maintainability. It is structured into distinct layers, including:
+
+Presentation Layer: User interfaces and components built with Flutter.
+Domain Layer: Contains business logic and use cases.
+Data Layer: Manages data sources, repositories, and external services.
+
+## 🧪 Testing
+
+The project adopts a Test-Driven Development (TDD) approach to ensure code reliability and maintainability. Unit tests, integration tests, and widget tests are utilized to cover various aspects of the application.
+
+## 🛠️ Built With
+
+- **[AndroidAlarmManagerPlus](https://pub.dev/packages/android_alarm_manager_plus):** Scheduling background tasks on Android with ease.
+- **[Bloc](https://pub.dev/packages/flutter_bloc):** Efficient state management for Flutter applications.
+- **[BlocTest](https://pub.dev/packages/bloc_test):** Helper methods for testing BLoC components.
+- **[CurrencyTextInputFormatter]:** Formatting currency input in text fields.
+- **[Dartz](https://pub.dev/packages/dartz):** Bringing functional programming to Dart.
+- **[EasyDateTimeline]:** Simplified timeline-based date picker.
+- **[Equatable](https://pub.dev/packages/equatable):** Simplifying equality comparisons in Dart.
+- **[flutterBloc](https://pub.dev/packages/flutter_bloc):** Legacy version of the Bloc library for Flutter.
+- **[flutterLocalNotification](https://pub.dev/packages/flutter_local_notifications):** Handling local notifications in Flutter.
+- **[FlutterScreenUtils](https://pub.dev/packages/flutter_screenutil):** Streamlining screen adaptation across different sizes.
+- **[flutterSvg](https://pub.dev/packages/flutter_svg):** SVG rendering in Flutter.
+- **[GetIt](https://pub.dev/packages/get_it):** A straightforward service locator for Dart and Flutter projects.
+- **[Http](https://pub.dev/packages/http):** Making composable and Future-based HTTP requests.
+- **[internetConnectionCheckerPlus](https://pub.dev/packages/internet_connection_checker_plus):** Checking internet connectivity.
+- **[IconifyFlutter]:** Displaying custom icons in Flutter apps.
+- **[intl](https://pub.dev/packages/intl):** Internationalization and localization support for Dart.
+- **[Lottie](https://pub.dev/packages/lottie):** Seamless integration of Lottie files for captivating animations.
+- **[Mocktail](https://pub.dev/packages/mocktail):** A powerful mocking library for Dart and Flutter.
+- **[Provider](https://pub.dev/packages/provider):** Simple and effective state management using provider patterns.
+- **[RxDart](https://pub.dev/packages/rxdart):** Reactive programming in Dart.
+- **[VeryGoodAnalysis](https://pub.dev/packages/very_good_analysis):** Ensuring code quality with best practices.
 
 # DEMO
-![Demo](https://github.com/andikatp/GifTest/blob/main/prayer_app.gif)
+![Demo](https://github.com/andikatp/GifTest/blob/main/prayer_app.gif){ width=50% }
+
+### Feel free to explore and contribute to make this project even better! 🚀
