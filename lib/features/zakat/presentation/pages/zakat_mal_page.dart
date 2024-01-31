@@ -16,13 +16,13 @@ class ZakatMalPage extends StatelessWidget {
     final controller = TextEditingController();
 
     void calculateHandler(BuildContext context) {
-      final goldString = controller.text;
-      final goldInRupiah =
-          goldString != '' ? int.parse(goldString.replaceAll('.', '')) : 0;
-      const errorMessage =
-          'Masukkan jumlah emas berdasarkan rupiah terlebih dahulu.';
+      final malString = controller.text;
+      final malInRupiah =
+          malString != '' ? int.parse(malString.replaceAll('.', '')) : 0;
+      const errorMessage = 'Masukkan jumlah penghasilan pertahun '
+          'berdasarkan rupiah terlebih dahulu.';
 
-      if (controller.text == '' || goldInRupiah <= 0) {
+      if (controller.text == '' || malInRupiah <= 0) {
         showDialog<AlertDialog>(
           context: context,
           builder: (context) =>
@@ -30,7 +30,7 @@ class ZakatMalPage extends StatelessWidget {
         );
       }
 
-      context.read<ZakatCubit>().getZakatMal(goldInRupiah);
+      context.read<ZakatCubit>().getZakatMal(malInRupiah);
 
       showDialog<AlertDialog>(
         builder: (context) => BlocBuilder<ZakatCubit, ZakatState>(

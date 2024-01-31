@@ -16,6 +16,7 @@ class AppConstant {
 
   static const int successfulHttpGetStatusCode = 200;
 
-  static const int nisabEmasPerBulan = 81945667;
+  static const int nisab = 81945667;
   static const int nisabGajiPerBulan = 6828806;
+  static const double nisabPertanian = 652.8;
 }

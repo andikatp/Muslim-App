@@ -34,12 +34,15 @@ AlertDialog buildSuccessDialog(
   BuildContext ctx,
   String message,
   int total,
-  VoidCallback clear,
-) {
+  VoidCallback clear, {
+  bool isAgriculture = false,
+}) {
   return AlertDialog(
     surfaceTintColor: Colors.white,
     content: Text(message),
-    title: Text('Rp. ${_currencyFormatter.format(total)}'),
+    title: Text(
+      isAgriculture ? '$total Kg' : 'Rp. ${_currencyFormatter.format(total)}',
+    ),
     actionsAlignment: MainAxisAlignment.center,
     actions: [
       ElevatedButton(
