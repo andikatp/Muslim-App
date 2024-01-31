@@ -41,6 +41,15 @@ class _TabbarQuranState extends State<TabbarQuran> {
                       ? Colours.secondaryBlue
                       : Colors.white,
                   borderRadius: BorderRadius.circular(50).r,
+                  boxShadow: selectedIndex == index
+                      ? [
+                          BoxShadow(
+                            color: Colours.secondaryBlue.withOpacity(0.5),
+                            offset: const Offset(0, 2),
+                            blurRadius: 6,
+                          ),
+                        ]
+                      : null,
                 ),
                 child: Text(
                   tabbar,
