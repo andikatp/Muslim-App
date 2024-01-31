@@ -60,6 +60,6 @@ The project adopts a Test-Driven Development (TDD) approach to ensure code relia
 - **[VeryGoodAnalysis](https://pub.dev/packages/very_good_analysis):** Ensuring code quality with best practices.
 
 # DEMO
-<img src="https://github.com/andikatp/GifTest/blob/main/prayer_app.gif" width="250" height="500"/>
+<img src="https://github.com/andikatp/Muslim-App/blob/main/img/muslim.gif" width="250" height="500"/>
 
 ### Feel free to explore and contribute to make this project even better! 🚀
