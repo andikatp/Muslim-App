@@ -3,14 +3,14 @@
 A Modest Flutter project to track shalat shedule, read quran, and calculate zakat using [API](https://api.myquran.com/v2/sholat/kota/id/1609) and [API](https://equran.id/api/surat/{nomor}) developed using CLean Architechture and TDD with more than 50 Tests.
 <table >
   <tr >
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/1.png" height="500" /></td>
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/2.png" height="500" /></td>
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/3.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/1.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/2.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/3.png" height="500" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/4.png" height="500" /></td>
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/5.png" height="500" /></td>
-    <td align="center"><img src="https://github.com/andikatp/restaurant/blob/third-submission/img/6.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/4.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/5.png" height="500" /></td>
+    <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/6.png" height="500" /></td>
   </tr>
 </table>
 
