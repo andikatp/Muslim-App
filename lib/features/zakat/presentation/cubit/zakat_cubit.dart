@@ -8,8 +8,17 @@ class ZakatCubit extends Cubit<ZakatState> {
   ZakatCubit() : super(const ZakatInitial());
 
   void getZakatEmas(int totalPriceGold) {
-    emit(const ZakatEmas(total: '1000000'));
+    if (totalPriceGold < 81945667) {
+      emit(const ZakatError(message: 'Harta Anda belum masuk nishab.'));
+    } else {
+      final totalZakat = totalPriceGold * 0.025;
+      emit(
+        ZakatEmas(
+          total: totalZakat.toInt(),
+          message: 'Jumlah Wajib Zakat yang harus dibayarkan '
+              '(2,5% dari Nilai Emas)',
+        ),
+      );
+    }
   }
-
-  
 }

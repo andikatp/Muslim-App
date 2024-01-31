@@ -11,6 +11,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  currency_text_input_formatter: ^2.1.11
   dartz: ^0.10.1
   date_picker_timeline: ^1.2.5
   easy_date_timeline: ^1.0.3
