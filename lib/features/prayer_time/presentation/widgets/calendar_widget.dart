@@ -17,7 +17,7 @@ class CalendarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return EasyDateTimeLine(
       initialDate: focusDate,
-      activeColor: Colours.secondaryBlue,
+      activeColor: Colours.primaryColor,
       headerProps: const EasyHeaderProps(
         monthPickerType: MonthPickerType.switcher,
       ),
@@ -25,9 +25,9 @@ class CalendarWidget extends StatelessWidget {
         dayStructure: DayStructure.dayStrDayNum,
         activeDayStyle: DayStyle(
           decoration: BoxDecoration(
-            color: Colours.secondaryBlue.withOpacity(0.12),
+            color: Colours.primaryColor.withOpacity(0.12),
             borderRadius: BorderRadius.circular(15).r,
-            border: Border.all(color: Colours.secondaryBlue),
+            border: Border.all(color: Colours.primaryColor),
           ),
         ),
       ),

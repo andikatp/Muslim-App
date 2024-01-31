@@ -65,32 +65,32 @@ final router = GoRouter(
               routes: [
                 GoRoute(
                   path: 'gold',
-                  name: Routes.zakatGold.name,
+                  name: Routes.gold.name,
                   builder: (_, __) => const ZakatGoldPage(),
                 ),
                 GoRoute(
                   path: 'profession',
-                  name: Routes.zakatProfession.name,
+                  name: Routes.profession.name,
                   builder: (_, __) => const ZakatProfessionPage(),
                 ),
                 GoRoute(
                   path: 'trade',
-                  name: Routes.zakatTrade.name,
+                  name: Routes.trade.name,
                   builder: (_, __) => const ZakatTradePage(),
                 ),
                 GoRoute(
                   path: 'mal',
-                  name: Routes.zakatMal.name,
+                  name: Routes.mal.name,
                   builder: (_, __) => const ZakatMalPage(),
                 ),
                 GoRoute(
                   path: 'fitrah',
-                  name: Routes.zakatFitrah.name,
+                  name: Routes.fitrah.name,
                   builder: (_, __) => const ZakatFitrahPage(),
                 ),
                 GoRoute(
                   path: 'agriculture',
-                  name: Routes.zakatAgriculture.name,
+                  name: Routes.agriculture.name,
                   builder: (_, __) => const ZakatAgriculturePage(),
                 ),
               ],

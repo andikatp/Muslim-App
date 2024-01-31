@@ -46,31 +46,24 @@ class _PrayerTimePageState extends State<PrayerTimePage> {
       appBar: const AppBarJadwalWidget(),
       body: BlocBuilder<PrayerTimeBloc, PrayerTimeState>(
         builder: (context, state) {
-          if (state is PrayerTimeLoading) {
-            return const Center(
-              child: Text('loading'),
-            );
-          }
           if (state is PrayerTimeError) {
             return Center(
               child: Text(state.message),
             );
           }
-          if (state is PrayerTimeLoaded) {
-            return Stack(
-              children: [
-                SizedBox(
-                  height: 1.sh - kToolbarHeight,
-                  child: CalendarWidget(
-                    focusDate: _focusDate,
-                    onDateChange: changeDate,
-                  ),
+
+          return Stack(
+            children: [
+              SizedBox(
+                height: 1.sh - kToolbarHeight,
+                child: CalendarWidget(
+                  focusDate: _focusDate,
+                  onDateChange: changeDate,
                 ),
-                PrayerTime(state: state),
-              ],
-            );
-          }
-          return const SizedBox();
+              ),
+              PrayerTime(state: state),
+            ],
+          );
         },
       ),
     );

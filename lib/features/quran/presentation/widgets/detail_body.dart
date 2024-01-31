@@ -20,11 +20,11 @@ class DetailBody extends StatelessWidget {
             padding: REdgeInsets.symmetric(horizontal: 18, vertical: 14),
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colours.secondaryBlue.withOpacity(0.12),
+              color: Colours.primaryColor.withOpacity(0.12),
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
                 width: 1.5,
-                color: Colours.secondaryBlue,
+                color: Colours.primaryColor,
               ),
             ),
             child: Text(

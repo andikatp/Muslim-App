@@ -73,7 +73,7 @@ class DashboardPage extends StatelessWidget {
             label: '',
             selectedIcon: Iconify(
               Healthicons.money_bag,
-              color: Colours.secondaryBlue,
+              color: Colours.primaryColor,
               size: 28.sp,
             ),
           ),
