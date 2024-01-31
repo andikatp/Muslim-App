@@ -26,7 +26,7 @@ class ZakatGoldPage extends StatelessWidget {
         showDialog<AlertDialog>(
           context: context,
           builder: (context) =>
-              buildGeneralDialog(context, errorMessage, controller),
+              buildGeneralDialog(context, errorMessage, controller.clear),
         );
       }
 
@@ -36,13 +36,17 @@ class ZakatGoldPage extends StatelessWidget {
         builder: (context) => BlocBuilder<ZakatCubit, ZakatState>(
           builder: (context, state) {
             if (state is ZakatError) {
-              return buildGeneralDialog(context, state.message, controller);
+              return buildGeneralDialog(
+                context,
+                state.message,
+                controller.clear,
+              );
             } else if (state is ZakatEmas) {
               return buildSuccessDialog(
                 context,
                 state.message,
                 state.total,
-                controller,
+                controller.clear,
               );
             }
             return const SizedBox();

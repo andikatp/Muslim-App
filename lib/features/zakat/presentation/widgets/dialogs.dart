@@ -5,7 +5,7 @@ import 'package:jadwal_solat/core/constants/colours.dart';
 AlertDialog buildGeneralDialog(
   BuildContext ctx,
   String message,
-  TextEditingController controller,
+  VoidCallback clear,
 ) {
   return AlertDialog(
     surfaceTintColor: Colors.white,
@@ -14,7 +14,7 @@ AlertDialog buildGeneralDialog(
     actions: [
       ElevatedButton(
         onPressed: () {
-          controller.clear();
+          clear();
           Navigator.of(ctx).pop();
         },
         style: ElevatedButton.styleFrom(
@@ -34,7 +34,7 @@ AlertDialog buildSuccessDialog(
   BuildContext ctx,
   String message,
   int total,
-  TextEditingController controller,
+  VoidCallback clear,
 ) {
   return AlertDialog(
     surfaceTintColor: Colors.white,
@@ -44,7 +44,7 @@ AlertDialog buildSuccessDialog(
     actions: [
       ElevatedButton(
         onPressed: () {
-          controller.clear();
+          clear();
           Navigator.of(ctx).pop();
         },
         style: ElevatedButton.styleFrom(

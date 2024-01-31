@@ -68,9 +68,9 @@ class ZakatPage extends StatelessWidget {
               padding: REdgeInsets.all(20),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 12.h,
-                mainAxisSpacing: 12.h,
-                mainAxisExtent: 175.h,
+                crossAxisSpacing: 16.h,
+                mainAxisSpacing: 16.h,
+                mainAxisExtent: 170.h,
               ),
               itemBuilder: (context, index) => Material(
                 elevation: 2,
@@ -94,7 +94,7 @@ class ZakatPage extends StatelessWidget {
                       children: [
                         Iconify(
                           zakatList[index]['icon']!,
-                          size: Sizes.p48,
+                          size: Sizes.p56,
                         ),
                         Text(
                           zakatList[index]['label']!,
@@ -102,6 +102,7 @@ class ZakatPage extends StatelessWidget {
                           style: context.textTheme.bodyLarge!.copyWith(
                             color: Colours.primaryColor,
                             fontWeight: FontWeight.w500,
+                            fontSize: 18.sp,
                           ),
                         ),
                       ],

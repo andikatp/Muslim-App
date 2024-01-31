@@ -5,14 +5,12 @@ import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/core/constants/colours.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
 
-class TextFieldZakat extends StatelessWidget {
-  const TextFieldZakat({
+class TextFieldZakatReadOnly extends StatelessWidget {
+  const TextFieldZakatReadOnly({
     required this.controller,
     required this.title,
-    this.function,
     super.key,
   });
-  final void Function(String)? function;
   final String title;
   final TextEditingController controller;
 
@@ -26,8 +24,8 @@ class TextFieldZakat extends StatelessWidget {
           style: context.textTheme.bodyLarge,
         ),
         TextField(
+          readOnly: true,
           controller: controller,
-          onChanged: function,
           cursorColor: Colours.primaryColor,
           autofocus: true,
           keyboardType: TextInputType.number,
@@ -55,11 +53,10 @@ class TextFieldZakat extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20).r,
               borderSide: const BorderSide(
-                width: 3,
                 color: Colours.primaryColor,
               ),
             ),
-            fillColor: Colours.backgroundColor.withOpacity(0.3),
+            fillColor: Colours.backgroundColor,
             filled: true,
           ),
         ),

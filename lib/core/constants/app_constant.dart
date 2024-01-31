@@ -15,4 +15,7 @@ class AppConstant {
   static const String generalFailureMessage = 'Ups, check your connection';
 
   static const int successfulHttpGetStatusCode = 200;
+
+  static const int nisabEmasPerBulan = 81945667;
+  static const int nisabGajiPerBulan = 6828806;
 }
