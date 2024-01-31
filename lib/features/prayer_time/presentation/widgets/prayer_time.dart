@@ -12,7 +12,7 @@ import 'package:jadwal_solat/features/prayer_time/presentation/bloc/prayer_time_
 
 class PrayerTime extends StatelessWidget {
   const PrayerTime({required this.state, super.key});
-  final PrayerTimeLoaded state;
+  final PrayerTimeState state;
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class PrayerTime extends StatelessWidget {
           (currentHour == prayerHour && currentMinute < prayerMinute)) {
         if (label == getNextPrayerLabel(state)) {
           return const dartz.Tuple2(
-            Colours.secondaryBlue,
+            Colours.primaryColor,
             Colors.white,
           );
         }
@@ -133,7 +133,13 @@ class PrayerTime extends StatelessWidget {
           itemCount: prayerList.length,
           itemBuilder: (context, index) {
             final prayer = prayerList[index];
-            final containerColors = getContainerColors(prayer['label']!, state);
+            final containerColors = state is PrayerTimeLoaded
+                ? getContainerColors(
+                    prayer['label']!, state as PrayerTimeLoaded,)
+                : const dartz.Tuple2(
+                    Colors.white,
+                    Colors.black,
+                  );
             return Container(
               padding: REdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -167,10 +173,12 @@ class PrayerTime extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    getPrayerTime(
-                      prayer['label']!,
-                      state,
-                    ),
+                    state is PrayerTimeLoaded
+                        ? getPrayerTime(
+                            prayer['label']!,
+                            state as PrayerTimeLoaded,
+                          )
+                        : 'loading..',
                     style: TextStyle(color: containerColors.value2),
                   ),
                 ],

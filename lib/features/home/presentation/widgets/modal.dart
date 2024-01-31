@@ -54,7 +54,7 @@ class _ModalState extends State<Modal> {
                     width: Sizes.p92,
                     decoration: BoxDecoration(
                       color: selectedIndex == index
-                          ? Colours.secondaryBlue
+                          ? Colours.primaryColor
                           : Colors.white,
                       borderRadius: BorderRadius.circular(25).r,
                     ),

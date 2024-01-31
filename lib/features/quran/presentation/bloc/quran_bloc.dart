@@ -17,7 +17,7 @@ class QuranBloc extends Bloc<QuranEvent, QuranState> {
         _getQuranContent = getQuranContent,
         super(const QuranInitial()) {
     on<QuranEvent>((event, emit) {
-      emit(const QuranContentLoading());
+      emit(const QuranLoading());
     });
     on<GetQuransEvent>(_getQuransHandler);
     on<GetQuranContentEvent>(_getQuranContentHandler);

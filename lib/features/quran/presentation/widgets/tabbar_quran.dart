@@ -38,13 +38,13 @@ class _TabbarQuranState extends State<TabbarQuran> {
                 padding: REdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 decoration: BoxDecoration(
                   color: selectedIndex == index
-                      ? Colours.secondaryBlue
+                      ? Colours.primaryColor
                       : Colors.white,
                   borderRadius: BorderRadius.circular(50).r,
                   boxShadow: selectedIndex == index
                       ? [
                           BoxShadow(
-                            color: Colours.secondaryBlue.withOpacity(0.5),
+                            color: Colours.primaryColor.withOpacity(0.5),
                             offset: const Offset(0, 2),
                             blurRadius: 6,
                           ),

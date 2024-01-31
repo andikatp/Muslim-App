@@ -6,11 +6,13 @@ import 'package:colorful_iconify_flutter/icons/noto.dart';
 import 'package:colorful_iconify_flutter/icons/twemoji.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:jadwal_solat/core/commons/widgets/header.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/core/constants/colours.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
+import 'package:jadwal_solat/core/services/router.dart';
 
 class ZakatPage extends StatelessWidget {
   const ZakatPage({super.key});
@@ -18,12 +20,36 @@ class ZakatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final zakatList = [
-      {'label': 'Zakat Emas', 'icon': Noto.coin},
-      {'label': 'Zakat Profesi', 'icon': FlatColorIcons.sales_performance},
-      {'label': 'Zakat Niaga', 'icon': Noto.briefcase},
-      {'label': 'Zakat Mal', 'icon': Logos.treasuredata_icon},
-      {'label': 'Zakat Fitrah', 'icon': Fxemoji.cookedrice},
-      {'label': 'Zakat Pertanian', 'icon': Twemoji.sheaf_of_rice},
+      {
+        'label': 'Zakat Emas',
+        'icon': Noto.coin,
+        'path': Routes.gold.name,
+      },
+      {
+        'label': 'Zakat Profesi',
+        'icon': FlatColorIcons.sales_performance,
+        'path': Routes.profession.name,
+      },
+      {
+        'label': 'Zakat Niaga',
+        'icon': Noto.briefcase,
+        'path': Routes.trade.name,
+      },
+      {
+        'label': 'Zakat Mal',
+        'icon': Logos.treasuredata_icon,
+        'path': Routes.mal.name,
+      },
+      {
+        'label': 'Zakat Fitrah',
+        'icon': Fxemoji.cookedrice,
+        'path': Routes.fitrah.name,
+      },
+      {
+        'label': 'Zakat Pertanian',
+        'icon': Twemoji.sheaf_of_rice,
+        'path': Routes.agriculture.name,
+      },
     ];
     return Scaffold(
       backgroundColor: Colours.backgroundColor,
@@ -32,7 +58,7 @@ class ZakatPage extends StatelessWidget {
         child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemCount: zakatList.length,
-          padding: REdgeInsets.all(48).copyWith(top: 36),
+          padding: REdgeInsets.all(32).copyWith(top: 12),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
@@ -43,8 +69,8 @@ class ZakatPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20).r,
               color: Colors.white,
               child: InkWell(
-                onTap: () {},
-                splashColor: Colours.secondaryBlue.withOpacity(0.75),
+                onTap: () => context.push('/zakat/${zakatList[index]['path']}'),
+                splashColor: Colours.primaryColor.withOpacity(0.75),
                 borderRadius: BorderRadius.circular(20).r,
                 child: Container(
                   decoration: BoxDecoration(
@@ -64,7 +90,7 @@ class ZakatPage extends StatelessWidget {
                         zakatList[index]['label']!,
                         textAlign: TextAlign.center,
                         style: context.textTheme.bodyLarge!
-                            .copyWith(color: Colours.secondaryBlue),
+                            .copyWith(color: Colours.primaryColor),
                       ),
                     ],
                   ),
