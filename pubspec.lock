@@ -257,10 +257,10 @@ packages:
     dependency: "direct main"
     description:
       name: iconify_flutter
-      sha256: "28e41d51ad4f1551c4105e007c200a3872532621a368ecf28fbad6c707a61acf"
+      sha256: a2d5d36a8381331c8d4e0a6b71378fca51bd6d15e38192568a30c0a91133a9af
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   internet_connection_checker_plus:
     dependency: "direct main"
     description:

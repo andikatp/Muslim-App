@@ -26,7 +26,7 @@ dependencies:
   go_router: ^13.1.0
   google_fonts: ^6.1.0
   http: ^1.2.0
-  iconify_flutter: ^0.0.4
+  iconify_flutter: ^0.0.5
   internet_connection_checker_plus: ^2.2.0
   intl: ^0.18.1
   meta: ^1.10.0
