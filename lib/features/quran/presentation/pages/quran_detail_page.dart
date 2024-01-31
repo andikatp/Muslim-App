@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
+import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/features/quran/presentation/bloc/quran_bloc.dart';
+import 'package:jadwal_solat/features/quran/presentation/widgets/detail_body.dart';
 
 class QuranDetailPage extends StatelessWidget {
   const QuranDetailPage({super.key});
@@ -33,6 +35,7 @@ class QuranDetailPage extends StatelessWidget {
             appBar: AppBar(
               centerTitle: true,
               title: Text(state.quran.namaLatin),
+              surfaceTintColor: Colors.white,
               actions: [
                 IconButton(
                   onPressed: () {},
@@ -43,6 +46,13 @@ class QuranDetailPage extends StatelessWidget {
                   iconSize: 28,
                 ),
               ],
+            ),
+            body: ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              separatorBuilder: (_, __) => Gap.h12,
+              itemCount: state.quran.ayat.length,
+              itemBuilder: (context, index) =>
+                  DetailBody(ayat: state.quran.ayat[index]),
             ),
           );
         }
