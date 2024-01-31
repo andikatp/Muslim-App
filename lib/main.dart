@@ -9,7 +9,6 @@ import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/prayer_cubit.dart';
 import 'package:jadwal_solat/core/services/injection_container.dart';
 import 'package:jadwal_solat/core/services/router.dart';
-import 'package:jadwal_solat/screens/main_screen.dart';
 
 Future<void> main() async  {
   WidgetsFlutterBinding.ensureInitialized();
