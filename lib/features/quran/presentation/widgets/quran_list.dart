@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
 import 'package:jadwal_solat/features/quran/presentation/bloc/quran_bloc.dart';
 
@@ -31,7 +32,7 @@ class QuranList extends StatelessWidget {
                   vertical: 10,
                 ),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () => context.push('/quran/detail', extra: state.qurans[index].nomor),
                   leading: CircleAvatar(
                     radius: 22,
                     backgroundColor: Colors.black.withOpacity(0.75),

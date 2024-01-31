@@ -43,3 +43,11 @@ final class QuranError extends QuranState {
   @override
   List<Object?> get props => [message];
 }
+
+final class QuranContentError extends QuranState {
+  const QuranContentError({required this.message});
+  final String message;
+
+  @override
+  List<Object?> get props => [message];
+}
