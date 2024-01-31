@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jadwal_solat/core/constants/app_sizes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
 import 'package:jadwal_solat/features/quran/presentation/bloc/quran_bloc.dart';
 
@@ -60,7 +60,13 @@ class QuranList extends StatelessWidget {
                 ),
               );
             },
-            separatorBuilder: (_, __) => Gap.h12,
+            separatorBuilder: (_, __) => Padding(
+              padding: REdgeInsets.symmetric(horizontal: 44),
+              child: Divider(
+                height: 1.h,
+                color: Colors.black.withOpacity(0.5),
+              ),
+            ),
           );
         }
         return const SizedBox();
