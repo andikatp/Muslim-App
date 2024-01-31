@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jadwal_solat/bloc/isi_quran_cubit.dart';
 import 'package:jadwal_solat/bloc/nama_quran_cubit.dart';
-import 'package:jadwal_solat/screens/home_page_screen.dart';
-import 'package:jadwal_solat/screens/main_screen.dart';
 import 'package:jadwal_solat/screens/quran_read_screen.dart';
 
 class QuranPageScreen extends StatefulWidget {
@@ -34,100 +31,106 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
         children: [
           Container(
             decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(30)),),
+              color: Colors.white,
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+            ),
             height: 246,
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(20, 65, 20, 20),
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Al-Quran',
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500, fontSize: 18,),
-                  ),
-                  const Row(
-                    children: [
-                      Icon(
-                        Icons.notifications_active_outlined,
-                        size: 18,
-                      ),
-                      SizedBox(
-                        width: 23,
-                      ),
-                      CircleAvatar(
-                        radius: 28,
-                        backgroundImage: AssetImage('assets/Ellipse.png'),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              Container(
-                height: 68,
-                width: double.infinity,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF5B49ED),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Row(
+            child: Column(
+              children: [
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    Text(
+                      'Al-Quran',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                    const Row(
                       children: [
-                        SvgPicture.asset(
-                          'assets/book.svg',
-                          height: 30,
-                          width: 33,
+                        Icon(
+                          Icons.notifications_active_outlined,
+                          size: 18,
                         ),
-                        const SizedBox(
-                          width: 13,
+                        SizedBox(
+                          width: 23,
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Terakhir Dibaca',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white,),
-                            ),
-                            Text(
-                              'Al-Haqqah : 1',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,),
-                            ),
-                          ],
+                        CircleAvatar(
+                          radius: 28,
+                          backgroundImage: AssetImage('assets/Ellipse.png'),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 27,
-                      child: Text(
-                        'اَلْحَاۤقَّةُۙ',
-                        textDirection: TextDirection.rtl,
-                        style: GoogleFonts.poppins(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
                   ],
                 ),
-              ),
-            ],),
+                const SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  height: 68,
+                  width: double.infinity,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF5B49ED),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/book.svg',
+                            height: 30,
+                            width: 33,
+                          ),
+                          const SizedBox(
+                            width: 13,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Terakhir Dibaca',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                'Al-Haqqah : 1',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 27,
+                        child: Text(
+                          'اَلْحَاۤقَّةُۙ',
+                          textDirection: TextDirection.rtl,
+                          style: GoogleFonts.poppins(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
           Container(
             width: double.infinity,
@@ -135,7 +138,9 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30),),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
@@ -152,7 +157,8 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                         boxShadow: tappedIndex == index
                             ? [
                                 BoxShadow(
-                                  color: const Color(0xFF2FD9E3).withOpacity(0.5),
+                                  color:
+                                      const Color(0xFF2FD9E3).withOpacity(0.5),
                                   offset: const Offset(0, 2),
                                   blurRadius: 6,
                                 ),
@@ -161,13 +167,15 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: Center(
-                          child: Text(
-                        _navigation[index],
-                        style: GoogleFonts.poppins(
+                        child: Text(
+                          _navigation[index],
+                          style: GoogleFonts.poppins(
                             color: tappedIndex == index
                                 ? Colors.white
-                                : Colors.black,),
-                      ),),
+                                : Colors.black,
+                          ),
+                        ),
+                      ),
                     ),
                     onTap: () {
                       setState(() {
@@ -182,58 +190,68 @@ class _QuranPageScreenState extends State<QuranPageScreen> {
           BlocBuilder<NamaQuranCubit, NamaQuranState>(
             builder: (context, state) {
               return ListView.separated(
-                  padding: EdgeInsets.zero,
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10,),
-                      child: ListTile(
-                        onTap: () {
-                          print(index + 1);
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => QuranReadScreen(
-                                    halaman: index + 1,
-                                  ),),);
-                        },
-                        leading: CircleAvatar(
-                          radius: 22,
-                          backgroundColor: Colors.black.withOpacity(0.75),
-                          child: Text(state.dataSurah[index].nomor.toString()),
-                        ),
-                        title: Text(
-                          state.dataSurah[index].namaLatin ?? 'Tidak ada Nama',
-                          style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black.withOpacity(0.75),),
-                        ),
-                        subtitle: Text(
-                          '${state.dataSurah[index].arti} (${state.dataSurah[index].jumlahAyat})',
-                          style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(0.75),),
-                        ),
-                        trailing: Text(
-                          state.dataSurah[index].nama ?? 'Tidak ada Nama',
-                          style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black.withOpacity(0.75),),
+                padding: EdgeInsets.zero,
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 10,
+                    ),
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          // ignore: inference_failure_on_instance_creation
+                          MaterialPageRoute(
+                            builder: (_) => QuranReadScreen(
+                              halaman: index + 1,
+                            ),
+                          ),
+                        );
+                      },
+                      leading: CircleAvatar(
+                        radius: 22,
+                        backgroundColor: Colors.black.withOpacity(0.75),
+                        child: Text(state.dataSurah[index].nomor.toString()),
+                      ),
+                      title: Text(
+                        state.dataSurah[index].namaLatin,
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black.withOpacity(0.75),
                         ),
                       ),
-                    );
-                  },
-                  separatorBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 45),
-                        child: Divider(
-                          height: 1,
-                          color: Colors.black.withOpacity(0.5),
+                      subtitle: Text(
+                        '${state.dataSurah[index].arti} '
+                        '(${state.dataSurah[index].jumlahAyat})',
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black.withOpacity(0.75),
                         ),
                       ),
-                  itemCount: state.dataSurah.length,);
+                      trailing: Text(
+                        state.dataSurah[index].nama,
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black.withOpacity(0.75),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 45),
+                  child: Divider(
+                    height: 1,
+                    color: Colors.black.withOpacity(0.5),
+                  ),
+                ),
+                itemCount: state.dataSurah.length,
+              );
             },
           ),
         ],

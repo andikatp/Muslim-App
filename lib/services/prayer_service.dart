@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:jadwal_solat/core/utils/typedef.dart';
 import 'package:jadwal_solat/features/prayer_time/data/models/prayer_time_model.dart';
-import 'package:jadwal_solat/models/prayer_time_api_model.dart';
 
 class PrayerService {
   Future<PrayerTimeModel> getPrayerTime({
@@ -16,8 +15,9 @@ class PrayerService {
     final response = await http.get(uri);
     final getData = jsonDecode(response.body);
     if (response.statusCode == 200) {
-      final data =
-          PrayerTimeModel.fromJson(getData['data']['jadwal'] as ResultMap);
+      final data = PrayerTimeModel.fromJson(
+        (getData['data'] as ResultMap)['jadwal'] as ResultMap,
+      );
       return data;
     } else {
       throw Exception('Error code : ${response.statusCode}');
