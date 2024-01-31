@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jadwal_solat/features/prayer_time/data/models/prayer_time_model.dart';
-import 'package:jadwal_solat/models/prayer_time_api_model.dart';
 import 'package:jadwal_solat/services/prayer_service.dart';
 
 class PrayerCubit extends Cubit<PrayerState> {
