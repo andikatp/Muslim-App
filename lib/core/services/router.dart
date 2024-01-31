@@ -13,7 +13,7 @@ enum Routes {
   home,
   jadwal,
   quran,
-  quranDetail,
+  detail,
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -37,7 +37,7 @@ final router = GoRouter(
         child: const PrayerTimePage(),
       ),
     ),
-     GoRoute(
+    GoRoute(
       path: '/quran',
       name: Routes.quran.name,
       builder: (context, state) => BlocProvider(
@@ -46,9 +46,12 @@ final router = GoRouter(
       ),
       routes: [
         GoRoute(
-          path: 'quran-detail',
-          name: Routes.quranDetail.name,
-          builder: (context, state) => const QuranDetailPage(),
+          path: 'detail',
+          name: Routes.detail.name,
+          builder: (context, state) => BlocProvider(
+            create: (context) => sl<QuranBloc>(),
+            child: const QuranDetailPage(),
+          ),
         ),
       ],
     ),

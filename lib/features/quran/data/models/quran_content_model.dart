@@ -3,7 +3,7 @@ import 'package:jadwal_solat/features/quran/data/models/ayat_model.dart';
 import 'package:jadwal_solat/features/quran/domain/entities/quran_content_entity.dart';
 
 class QuranContentModel extends QuranContentEntity {
-  QuranContentModel({
+  const QuranContentModel({
     required super.nomor,
     required super.namaLatin,
     required super.ayat,
@@ -15,7 +15,9 @@ class QuranContentModel extends QuranContentEntity {
     return QuranContentModel(
       nomor: json['nomor'] as int,
       namaLatin: json['nama_latin'] as String,
-      ayat: (json['ayat'] as List<ResultMap>).map(AyatModel.fromJson).toList(),
+      ayat: (json['ayat'] as List<dynamic>)
+          .map((e) => AyatModel.fromJson(e as ResultMap))
+          .toList(),
     );
   }
 
