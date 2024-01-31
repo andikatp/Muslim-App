@@ -51,7 +51,7 @@ class _ModalState extends State<Modal> {
                   },
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
-                    width: Sizes.p92,
+                    width: Sizes.p108,
                     decoration: BoxDecoration(
                       color: selectedIndex == index
                           ? Colours.primaryColor

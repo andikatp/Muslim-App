@@ -24,7 +24,7 @@ final class ZakatEmas extends ZakatState {
 final class ZakatProfesi extends ZakatState {
   const ZakatProfesi({required this.message, required this.total});
   final String message;
-  final String total;
+  final int total;
 
   @override
   List<Object> get props => [message, total];
@@ -33,7 +33,7 @@ final class ZakatProfesi extends ZakatState {
 final class ZakatNiaga extends ZakatState {
   const ZakatNiaga({required this.message, required this.total});
   final String message;
-  final String total;
+  final int total;
 
   @override
   List<Object> get props => [message, total];
@@ -42,7 +42,7 @@ final class ZakatNiaga extends ZakatState {
 final class ZakatMal extends ZakatState {
   const ZakatMal({required this.message, required this.total});
   final String message;
-  final String total;
+  final int total;
 
   @override
   List<Object> get props => [message, total];
@@ -51,7 +51,7 @@ final class ZakatMal extends ZakatState {
 final class ZakatFitrah extends ZakatState {
   const ZakatFitrah({required this.message, required this.total});
   final String message;
-  final String total;
+  final int total;
 
   @override
   List<Object> get props => [message, total];
@@ -60,7 +60,7 @@ final class ZakatFitrah extends ZakatState {
 final class ZakatPertanian extends ZakatState {
   const ZakatPertanian({required this.message, required this.total});
   final String message;
-  final String total;
+  final int total;
 
   @override
   List<Object> get props => [message, total];
