@@ -38,13 +38,28 @@ class ZakatCubit extends Cubit<ZakatState> {
     }
   }
 
-   void getZakatPerdagangan(int totalPerdagangan) {
+  void getZakatPerdagangan(int totalPerdagangan) {
     if (totalPerdagangan < AppConstant.nisabEmasPerBulan) {
       emit(const ZakatError(message: 'Harta Anda belum masuk nishab.'));
     } else {
       final totalZakat = totalPerdagangan * 0.025;
       emit(
         ZakatNiaga(
+          total: totalZakat.toInt(),
+          message: 'Jumlah Wajib Zakat yang harus dibayarkan '
+              '(2,5% dari Nilai Penghasilan)',
+        ),
+      );
+    }
+  }
+
+  void getZakatMal(int totalPenghasilan) {
+    if (totalPenghasilan < AppConstant.nisabEmasPerBulan) {
+      emit(const ZakatError(message: 'Harta Anda belum masuk nishab.'));
+    } else {
+      final totalZakat = totalPenghasilan * 0.025;
+      emit(
+        ZakatMal(
           total: totalZakat.toInt(),
           message: 'Jumlah Wajib Zakat yang harus dibayarkan '
               '(2,5% dari Nilai Penghasilan)',
