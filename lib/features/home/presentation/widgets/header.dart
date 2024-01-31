@@ -4,7 +4,7 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/carbon.dart';
 import 'package:jadwal_solat/core/constants/app_sizes.dart';
 import 'package:jadwal_solat/core/extensions/context_extension.dart';
-import 'package:jadwal_solat/screens/home_page_screen.dart';
+import 'package:jadwal_solat/features/home/presentation/widgets/avatar_ustad.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
