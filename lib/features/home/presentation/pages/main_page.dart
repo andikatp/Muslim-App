@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jadwal_solat/core/constants/colours.dart';
 import 'package:jadwal_solat/features/home/presentation/widgets/header.dart';
 import 'package:jadwal_solat/features/home/presentation/widgets/modal.dart';
 
@@ -8,7 +9,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF5a48ed),
+      backgroundColor: Colours.backgroundBlue,
       body: Stack(
         children: [
           Image.asset(

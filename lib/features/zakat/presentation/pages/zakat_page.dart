@@ -52,53 +52,66 @@ class ZakatPage extends StatelessWidget {
       },
     ];
     return Scaffold(
-      backgroundColor: Colours.backgroundColor,
+      backgroundColor: const Color(0xFF5a48ed),
       appBar: const Header(title: 'Kalkulator Zakat'),
-      body: Center(
-        child: GridView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: zakatList.length,
-          padding: REdgeInsets.all(32).copyWith(top: 12),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+      body: Stack(
+        children: [
+          Image.asset(
+            'assets/Group.png',
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
           ),
-          itemBuilder: (context, index) => Padding(
-            padding: REdgeInsets.all(8),
-            child: Material(
-              elevation: 2,
-              borderRadius: BorderRadius.circular(20).r,
-              color: Colors.white,
-              child: InkWell(
-                onTap: () => context.push('/zakat/${zakatList[index]['path']}'),
-                splashColor: Colours.primaryColor.withOpacity(0.75),
-                borderRadius: BorderRadius.circular(20).r,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20).r,
-                  ),
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    runAlignment: WrapAlignment.center,
-                    alignment: WrapAlignment.center,
-                    direction: Axis.vertical,
-                    spacing: Sizes.p12,
-                    children: [
-                      Iconify(
-                        zakatList[index]['icon']!,
-                      ),
-                      Text(
-                        zakatList[index]['label']!,
-                        textAlign: TextAlign.center,
-                        style: context.textTheme.bodyLarge!
-                            .copyWith(color: Colours.primaryColor),
-                      ),
-                    ],
+          Center(
+            child: GridView.builder(
+              itemCount: zakatList.length,
+              padding: REdgeInsets.all(20),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12.h,
+                mainAxisSpacing: 12.h,
+                mainAxisExtent: 175.h,
+              ),
+              itemBuilder: (context, index) => Material(
+                elevation: 2,
+                borderRadius: BorderRadius.circular(16).r,
+                color: Colors.white,
+                child: InkWell(
+                  onTap: () =>
+                      context.push('/zakat/${zakatList[index]['path']}'),
+                  splashColor: Colours.primaryColor.withOpacity(0.75),
+                  borderRadius: BorderRadius.circular(16).r,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16).r,
+                    ),
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
+                      direction: Axis.vertical,
+                      spacing: Sizes.p12,
+                      children: [
+                        Iconify(
+                          zakatList[index]['icon']!,
+                          size: Sizes.p48,
+                        ),
+                        Text(
+                          zakatList[index]['label']!,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.bodyLarge!.copyWith(
+                            color: Colours.primaryColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
