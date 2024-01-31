@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:jadwal_solat/screens/home_page_screen.dart';
-import 'package:jadwal_solat/screens/jadwal_solat_screen.dart';
 import 'package:iconify_flutter/icons/eva.dart';
 import 'package:iconify_flutter/icons/ion.dart';
+import 'package:jadwal_solat/screens/home_page_screen.dart';
+import 'package:jadwal_solat/screens/jadwal_solat_screen.dart';
 import 'package:jadwal_solat/screens/quran_page_screen.dart';
 import 'package:jadwal_solat/screens/quran_read_screen.dart';
+import 'package:jadwal_solat/widget/floating_action_button_widget.dart';
 
-import '../widget/floating_action_button_widget.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -37,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: FloatingActionButtonWidget(),
+      floatingActionButton: const FloatingActionButtonWidget(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
@@ -55,15 +56,15 @@ class _MainScreenState extends State<MainScreen> {
               color: Colors.black.withOpacity(0.5),
             ),
             label: '',
-            activeIcon: Iconify(
+            activeIcon: const Iconify(
               Eva.compass_fill,
               color: Color(0xFF2FD9E3),
             ),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).backgroundColor,
+            backgroundColor: Theme.of(context).colorScheme.background,
             icon: const SizedBox.shrink(),
-            label: "",
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -73,7 +74,7 @@ class _MainScreenState extends State<MainScreen> {
               color: Colors.black.withOpacity(0.5),
             ),
             label: '',
-            activeIcon: Iconify(
+            activeIcon: const Iconify(
               Ion.book_outline,
               color: Color(0xFF2FD9E3),
             ),
@@ -90,7 +91,7 @@ class _MainScreenState extends State<MainScreen> {
               'assets/person.svg',
               width: 24,
               height: 24,
-              color: Color(0xFF2FD9E3),
+              color: const Color(0xFF2FD9E3),
             ),
           ),
         ],
