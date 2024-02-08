@@ -41,9 +41,9 @@ The project adopts a Test-Driven Development (TDD) approach to ensure code relia
 - **[AndroidAlarmManagerPlus](https://pub.dev/packages/android_alarm_manager_plus):** Scheduling background tasks on Android with ease.
 - **[Bloc](https://pub.dev/packages/flutter_bloc):** Efficient state management for Flutter applications.
 - **[BlocTest](https://pub.dev/packages/bloc_test):** Helper methods for testing BLoC components.
-- **[CurrencyTextInputFormatter]:** Formatting currency input in text fields.
+- **[CurrencyTextInputFormatter](https://pub.dev/packages/currency_text_input_formatter):** Formatting currency input in text fields.
 - **[Dartz](https://pub.dev/packages/dartz):** Bringing functional programming to Dart.
-- **[EasyDateTimeline]:** Simplified timeline-based date picker.
+- **[EasyDateTimeline](https://pub.dev/packages/easy_date_timeline):** Simplified timeline-based date picker.
 - **[Equatable](https://pub.dev/packages/equatable):** Simplifying equality comparisons in Dart.
 - **[flutterBloc](https://pub.dev/packages/flutter_bloc):** Legacy version of the Bloc library for Flutter.
 - **[flutterLocalNotification](https://pub.dev/packages/flutter_local_notifications):** Handling local notifications in Flutter.
@@ -52,7 +52,7 @@ The project adopts a Test-Driven Development (TDD) approach to ensure code relia
 - **[GetIt](https://pub.dev/packages/get_it):** A straightforward service locator for Dart and Flutter projects.
 - **[Http](https://pub.dev/packages/http):** Making composable and Future-based HTTP requests.
 - **[internetConnectionCheckerPlus](https://pub.dev/packages/internet_connection_checker_plus):** Checking internet connectivity.
-- **[IconifyFlutter]:** Displaying custom icons in Flutter apps.
+- **[IconifyFlutter](https://pub.dev/packages/iconify_flutter):** Displaying custom icons in Flutter apps.
 - **[intl](https://pub.dev/packages/intl):** Internationalization and localization support for Dart.
 - **[Lottie](https://pub.dev/packages/lottie):** Seamless integration of Lottie files for captivating animations.
 - **[Mocktail](https://pub.dev/packages/mocktail):** A powerful mocking library for Dart and Flutter.
