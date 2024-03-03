@@ -1,6 +1,6 @@
 # 🕋 Muslim App
 [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
- 
+  
 A Modest Flutter project to track shalat shedule, read quran, and calculate zakat using [API](https://api.myquran.com/v2/sholat/kota/id/1609) and [API](https://equran.id/api/surat/{nomor}) developed using Clean Architechture and TDD with more than 50 Tests.
 <table >
   <tr >
