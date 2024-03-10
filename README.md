@@ -8,7 +8,7 @@ A Modest Flutter project to track shalat shedule, read quran, and calculate zaka
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/2.png" height="500" /></td>
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/3.png" height="500" /></td>
   </tr>
-  <tr>
+  <tr> 
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/4.png" height="500" /></td>
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/5.png" height="500" /></td>
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/6.png" height="500" /></td>
