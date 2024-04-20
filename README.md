@@ -14,7 +14,7 @@ A Modest Flutter project to track shalat shedule, read quran, and calculate zaka
     <td align="center"><img src="https://github.com/andikatp/Muslim-App/blob/main/img/6.png" height="500" /></td>
   </tr>
 </table>
-
+ 
 ## 🎉 Features
 
 - **Shalat Reminder**: Receive timely reminders for prayer times.
