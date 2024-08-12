@@ -23,7 +23,7 @@ A Modest Flutter project to track shalat shedule, read quran, and calculate zaka
 - **Quran Reader**:  Access and read the Quran conveniently.
 - **Zakat Calculator**: Calculate and manage your Zakat obligations easily.
 
-## 🏗️ Architecture
+## 🏗️ Architecture 
 
 The project follows the principles of Clean Architecture, emphasizing separation of concerns and maintainability. It is structured into distinct layers, including:
 
